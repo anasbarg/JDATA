@@ -85,5 +85,17 @@ def range_data(p_start, p_end, year_from, year_to):
     )
     return response
 
+@app.route("/api/chart_config")
+def chart_config_json():
+    with open("chart_config.json") as f:
+        data = json.load(f)
+
+    response = app.response_class(
+        response=json.dumps(data),
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+
 if __name__ == "__main__":
     app.run(port=80)
