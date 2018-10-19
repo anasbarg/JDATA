@@ -22,7 +22,7 @@ def add_header(r):
 @app.route("/")
 @app.route("/home")
 def home():
-    return send_from_directory('/../frontend/dist', "index.html")
+    return send_from_directory('frontend/dist', "index.html")
 
 @app.route("/js/<path:path>")
 def js(path):
