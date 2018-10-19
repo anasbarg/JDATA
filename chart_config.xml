@@ -7,7 +7,7 @@
         fillBetween="true"
     >
         <sliders>
-            <slider type="yearSlider"/>
+            <slider type="yearSlider" labels="[1992, 2002, 2006, 2008, 2010, 2013]"/>
             <slider type="percentageSlider"/>
         </sliders>
         <datasets>
