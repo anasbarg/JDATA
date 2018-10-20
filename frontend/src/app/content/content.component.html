@@ -1,3 +1,16 @@
-<p>
-  content works!
-</p>
+<div class="content-navbar-bg">
+
+  <div class="container container-small">
+    <mat-tab-group [@.disabled]="true">
+      <div *ngFor="let i of arr">
+        <mat-tab label="Tab {{ i }}">
+          <mat-card>
+            <mat-card-title>Simple card {{ i }}</mat-card-title>
+            <mat-card-subtitle>subtitle</mat-card-subtitle>
+            <mat-card-content>sdfddddddddddddddddddddddddd</mat-card-content>
+          </mat-card>
+        </mat-tab>
+      </div>
+    </mat-tab-group>
+  </div>
+</div>
