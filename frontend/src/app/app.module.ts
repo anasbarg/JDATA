@@ -9,11 +9,13 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 // Components
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { ContentComponent } from "./content/content.component";
 
 // Services
 import { ChartConfigService } from "./services/chart-config.service";
+
 @NgModule({
-  declarations: [AppComponent, NavbarComponent],
+  declarations: [AppComponent, NavbarComponent, ContentComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
