@@ -139,6 +139,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
 /* harmony import */ var _content_content_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./content/content.component */ "./src/app/content/content.component.ts");
 /* harmony import */ var _services_chart_config_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services/chart-config.service */ "./src/app/services/chart-config.service.ts");
+/* harmony import */ var _chart_card_chart_card_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./chart-card/chart-card.component */ "./src/app/chart-card/chart-card.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -159,12 +160,13 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 // Services
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_8__["NavbarComponent"], _content_content_component__WEBPACK_IMPORTED_MODULE_9__["ContentComponent"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_8__["NavbarComponent"], _content_content_component__WEBPACK_IMPORTED_MODULE_9__["ContentComponent"], _chart_card_chart_card_component__WEBPACK_IMPORTED_MODULE_11__["ChartCardComponent"]],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
@@ -184,6 +186,72 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/chart-card/chart-card.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/chart-card/chart-card.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"padding: 10px;\">\n  <mat-card class=\"container\">\n    <mat-card-title>{{chart.title}}</mat-card-title>\n    <mat-card-subtitle>{{chart.subtitle}}</mat-card-subtitle>\n    <mat-card-content>dsfffffffffffff</mat-card-content>\n  </mat-card>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/chart-card/chart-card.component.scss":
+/*!******************************************************!*\
+  !*** ./src/app/chart-card/chart-card.component.scss ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NoYXJ0LWNhcmQvY2hhcnQtY2FyZC5jb21wb25lbnQuc2NzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/chart-card/chart-card.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/chart-card/chart-card.component.ts ***!
+  \****************************************************/
+/*! exports provided: ChartCardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChartCardComponent", function() { return ChartCardComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ChartCardComponent = /** @class */ (function () {
+    function ChartCardComponent() {
+    }
+    ChartCardComponent.prototype.ngOnInit = function () { };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])("chart"),
+        __metadata("design:type", Object)
+    ], ChartCardComponent.prototype, "chart", void 0);
+    ChartCardComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-chart-card",
+            template: __webpack_require__(/*! ./chart-card.component.html */ "./src/app/chart-card/chart-card.component.html"),
+            styles: [__webpack_require__(/*! ./chart-card.component.scss */ "./src/app/chart-card/chart-card.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ChartCardComponent);
+    return ChartCardComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/content/content.component.html":
 /*!************************************************!*\
   !*** ./src/app/content/content.component.html ***!
@@ -191,7 +259,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content-navbar-bg\">\n\n  <div class=\"container container-small\">\n    <mat-tab-group [@.disabled]=\"true\">\n      <div *ngFor=\"let i of arr\">\n        <mat-tab label=\"Tab {{ i }}\">\n          <mat-card>\n            <mat-card-title>Simple card {{ i }}</mat-card-title>\n            <mat-card-subtitle>subtitle</mat-card-subtitle>\n            <mat-card-content>sdfddddddddddddddddddddddddd</mat-card-content>\n          </mat-card>\n        </mat-tab>\n      </div>\n    </mat-tab-group>\n  </div>\n</div>\n"
+module.exports = "<div class=\"content-navbar-bg\">\n  <div class=\"container\">\n    <mat-tab-group [@.disabled]=\"true\">\n      <div *ngFor=\"let chart of chartConfig['charts']\">\n        <mat-tab label=\"{{ chart['title'] }}\">\n          <app-chart-card [chart]=\"chart\"></app-chart-card>\n        </mat-tab>\n      </div>\n    </mat-tab-group>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -202,7 +270,7 @@ module.exports = "<div class=\"content-navbar-bg\">\n\n  <div class=\"container 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@media (min-width: 768px) {\n  .container-small {\n    width: 300px; }\n  .container-large {\n    width: 970px; } }\n\n@media (min-width: 992px) {\n  .container-small {\n    width: 500px; }\n  .container-large {\n    width: 1170px; } }\n\n@media (min-width: 1200px) {\n  .container-small {\n    width: 700px; }\n  .container-large {\n    width: 1500px; } }\n\n.container-small,\n.container-large {\n  max-width: 100%; }\n\n.content-navbar-bg {\n  background-color: #f1f1f1;\n  height: 48px;\n  border-bottom: solid 0.5px #c8c8c8; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC9DOlxcVXNlcnNcXEFuYXMgQWxiYXJnaG91dGh5XFxEZXNrdG9wXFx3b3Jrc3BhY2VcXGpkYXRhXFxmcm9udGVuZC9zcmNcXGFwcFxcY29udGVudFxcY29udGVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0lBQ0UsYUFBWSxFQUNiO0VBRUQ7SUFDRSxhQUFZLEVBQ2IsRUFBQTs7QUFHSDtFQUNFO0lBQ0UsYUFBWSxFQUNiO0VBRUQ7SUFDRSxjQUFhLEVBQ2QsRUFBQTs7QUFHSDtFQUNFO0lBQ0UsYUFBWSxFQUNiO0VBRUQ7SUFDRSxjQUFhLEVBQ2QsRUFBQTs7QUFHSDs7RUFFRSxnQkFBZSxFQUNoQjs7QUFFRDtFQUNFLDBCQUF5QjtFQUN6QixhQUFZO0VBQ1osbUNBQWtDLEVBQ25DIiwiZmlsZSI6InNyYy9hcHAvY29udGVudC9jb250ZW50LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQG1lZGlhIChtaW4td2lkdGg6IDc2OHB4KSB7XHJcbiAgLmNvbnRhaW5lci1zbWFsbCB7XHJcbiAgICB3aWR0aDogMzAwcHg7XHJcbiAgfVxyXG5cclxuICAuY29udGFpbmVyLWxhcmdlIHtcclxuICAgIHdpZHRoOiA5NzBweDtcclxuICB9XHJcbn1cclxuXHJcbkBtZWRpYSAobWluLXdpZHRoOiA5OTJweCkge1xyXG4gIC5jb250YWluZXItc21hbGwge1xyXG4gICAgd2lkdGg6IDUwMHB4O1xyXG4gIH1cclxuXHJcbiAgLmNvbnRhaW5lci1sYXJnZSB7XHJcbiAgICB3aWR0aDogMTE3MHB4O1xyXG4gIH1cclxufVxyXG5cclxuQG1lZGlhIChtaW4td2lkdGg6IDEyMDBweCkge1xyXG4gIC5jb250YWluZXItc21hbGwge1xyXG4gICAgd2lkdGg6IDcwMHB4O1xyXG4gIH1cclxuXHJcbiAgLmNvbnRhaW5lci1sYXJnZSB7XHJcbiAgICB3aWR0aDogMTUwMHB4O1xyXG4gIH1cclxufVxyXG5cclxuLmNvbnRhaW5lci1zbWFsbCxcclxuLmNvbnRhaW5lci1sYXJnZSB7XHJcbiAgbWF4LXdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4uY29udGVudC1uYXZiYXItYmcge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNmMWYxZjE7XHJcbiAgaGVpZ2h0OiA0OHB4O1xyXG4gIGJvcmRlci1ib3R0b206IHNvbGlkIDAuNXB4ICNjOGM4Yzg7XHJcbn1cclxuIl19 */"
+module.exports = ".content-navbar-bg {\n  background-color: #f1f1f1;\n  height: 48px;\n  border-bottom: solid 0.5px #c8c8c8; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29udGVudC9DOlxcVXNlcnNcXEFuYXMgQWxiYXJnaG91dGh5XFxEZXNrdG9wXFx3b3Jrc3BhY2VcXGpkYXRhXFxmcm9udGVuZC9zcmNcXGFwcFxcY29udGVudFxcY29udGVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLDBCQUF5QjtFQUN6QixhQUFZO0VBQ1osbUNBQWtDLEVBQ25DIiwiZmlsZSI6InNyYy9hcHAvY29udGVudC9jb250ZW50LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRlbnQtbmF2YmFyLWJnIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjFmMWYxO1xyXG4gIGhlaWdodDogNDhweDtcclxuICBib3JkZXItYm90dG9tOiBzb2xpZCAwLjVweCAjYzhjOGM4O1xyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -233,11 +301,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var ContentComponent = /** @class */ (function () {
     function ContentComponent(_chartConfigService) {
         this._chartConfigService = _chartConfigService;
-        this.arr = [1, 2, 3, 4];
     }
     ContentComponent.prototype.ngOnInit = function () {
-        this.chartConfig = this._chartConfigService.getChartConfig();
-        console.log(this.chartConfig.subscribe());
+        var _this = this;
+        this._chartConfigService
+            .getChartConfig()
+            .subscribe(function (conf) { return (_this.chartConfig = conf); });
     };
     ContentComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -365,6 +434,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChartConfigService", function() { return ChartConfigService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -376,13 +446,149 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var ChartConfigService = /** @class */ (function () {
     function ChartConfigService(http) {
         this.http = http;
-        this._url = "http://127.0.0.1/api/chart_config";
+        this.chartConfig = {
+            charts: [
+                {
+                    dataProvider: "Threshold_range",
+                    title: "Boundaries Of Average Income",
+                    subtitle: "Please Specify The Intervals",
+                    type: "line",
+                    fillBetween: true,
+                    sliders: [
+                        {
+                            type: "yearSlider",
+                            labels: [1992, 2002, 2006, 2008, 2010, 2013]
+                        },
+                        {
+                            type: "percentageSlider"
+                        }
+                    ],
+                    datasets: [
+                        {
+                            datasetId: "min",
+                            label: "A label",
+                            color: "rgb(90, 30, 255)",
+                            borderWidth: 1,
+                            fill: true
+                        },
+                        {
+                            datasetId: "max",
+                            label: "A label",
+                            color: "rgb(90, 20, 255)",
+                            borderWidth: 1,
+                            fill: true
+                        }
+                    ],
+                    options: {
+                        pointRadius: 2,
+                        legendDisplay: true,
+                        yAxis: {
+                            min: 0,
+                            max: 1,
+                            scaleLabel: ""
+                        },
+                        xAxis: {
+                            scaleLabel: ""
+                        }
+                    }
+                },
+                {
+                    dataProvider: "Threshold_range",
+                    title: "Income Distribution",
+                    subtitle: "Please Select The Year",
+                    type: "line",
+                    fillBetween: true,
+                    sliders: [
+                        {
+                            type: "yearSlider",
+                            labels: [1992, 2002, 2006, 2008, 2010, 2013]
+                        },
+                        {
+                            type: "percentageSlider"
+                        }
+                    ],
+                    datasets: [
+                        {
+                            datasetId: "min",
+                            label: "A label",
+                            color: "rgb(90, 30, 255)",
+                            borderWidth: 1,
+                            fill: true
+                        },
+                        {
+                            datasetId: "max",
+                            label: "A label",
+                            color: "rgb(90, 20, 255)",
+                            borderWidth: 1,
+                            fill: true
+                        }
+                    ],
+                    options: {
+                        pointRadius: 2,
+                        legendDisplay: true,
+                        yAxis: {
+                            min: 0,
+                            max: 1,
+                            scaleLabel: ""
+                        },
+                        xAxis: {
+                            scaleLabel: ""
+                        }
+                    }
+                },
+                {
+                    dataProvider: "Threshold_range",
+                    title: "Share",
+                    subtitle: "Please Specify The Intervals",
+                    type: "line",
+                    fillBetween: true,
+                    sliders: [
+                        {
+                            type: "yearSlider",
+                            labels: [1992, 2002, 2006, 2008, 2010, 2013]
+                        },
+                        {
+                            type: "percentageSlider"
+                        }
+                    ],
+                    datasets: [
+                        {
+                            datasetId: "min",
+                            label: "A label",
+                            color: "rgb(90, 30, 255)",
+                            borderWidth: 1,
+                            fill: true
+                        },
+                        {
+                            datasetId: "max",
+                            label: "A label",
+                            color: "rgb(90, 20, 255)",
+                            borderWidth: 1,
+                            fill: true
+                        }
+                    ],
+                    options: {
+                        pointRadius: 2,
+                        legendDisplay: true,
+                        yAxis: {
+                            min: 0,
+                            max: 1,
+                            scaleLabel: ""
+                        },
+                        xAxis: {
+                            scaleLabel: ""
+                        }
+                    }
+                }
+            ]
+        };
     }
     ChartConfigService.prototype.getChartConfig = function () {
-        return this.http.get(this._url);
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(this.chartConfig);
     };
     ChartConfigService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
