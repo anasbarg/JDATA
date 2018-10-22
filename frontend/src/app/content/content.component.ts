@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-
+import { ChartConfig } from "../Types/ChartConfig";
 // Services
 import { ChartConfigService } from "../services/chart-config.service";
 
@@ -9,8 +9,7 @@ import { ChartConfigService } from "../services/chart-config.service";
   styleUrls: ["./content.component.scss"]
 })
 export class ContentComponent implements OnInit {
-  arr: Array<Number> = [1, 2, 3, 4];
-  chartConfig: any;
+  chartConfig: ChartConfig;
   constructor(private _chartConfigService: ChartConfigService) {}
 
   ngOnInit() {

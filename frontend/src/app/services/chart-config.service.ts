@@ -146,7 +146,7 @@ export class ChartConfigService {
 
   constructor(private http: HttpClient) {}
 
-  public getChartConfig(): Observable<Object> {
+  public getChartConfig(): Observable<ChartConfig> {
     return of(this.chartConfig);
   }
 }
