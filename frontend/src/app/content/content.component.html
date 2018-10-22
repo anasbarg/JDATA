@@ -1,14 +1,16 @@
 <div class="content-navbar-bg">
 
-  <div class="container container-small">
+  <div class="container">
     <mat-tab-group [@.disabled]="true">
-      <div *ngFor="let i of arr">
-        <mat-tab label="Tab {{ i }}">
-          <mat-card>
-            <mat-card-title>Simple card {{ i }}</mat-card-title>
-            <mat-card-subtitle>subtitle</mat-card-subtitle>
-            <mat-card-content>sdfddddddddddddddddddddddddd</mat-card-content>
-          </mat-card>
+      <div *ngFor="let chart of chartConfig['charts']">
+        <mat-tab label="{{ chart['title'] }}">
+          <div style="padding: 10px;">
+            <mat-card class="container container-small">
+              <mat-card-title>{{ chart['title'] }}</mat-card-title>
+              <mat-card-subtitle>{{ chart['subtitle'] }}</mat-card-subtitle>
+              <mat-card-content>sdfddddddddddddddddddddddddd</mat-card-content>
+            </mat-card>
+          </div>
         </mat-tab>
       </div>
     </mat-tab-group>

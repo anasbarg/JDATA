@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 
+// Services
+import { ChartConfigService } from "../services/chart-config.service";
+
 @Component({
   selector: "app-content",
   templateUrl: "./content.component.html",
@@ -7,7 +10,12 @@ import { Component, OnInit } from "@angular/core";
 })
 export class ContentComponent implements OnInit {
   arr: Array<Number> = [1, 2, 3, 4];
-  constructor() {}
+  chartConfig: any;
+  constructor(private _chartConfigService: ChartConfigService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this._chartConfigService
+      .getChartConfig()
+      .subscribe(conf => (this.chartConfig = conf));
+  }
 }
