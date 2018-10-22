@@ -5,6 +5,7 @@ import { MaterialModule } from "./material";
 import { AppRoutingModule } from "./app-routing.module";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule } from "@angular/common/http";
 
 // Components
 import { AppComponent } from "./app.component";
@@ -21,7 +22,8 @@ import { ChartConfigService } from "./services/chart-config.service";
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [ChartConfigService],
   bootstrap: [AppComponent]
