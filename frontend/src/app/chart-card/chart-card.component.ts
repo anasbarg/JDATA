@@ -7,7 +7,7 @@ import { Chart } from "../Types/Chart";
 })
 export class ChartCardComponent implements OnInit {
   @Input("chart")
-  chart: Chart;
+  chart: Chart = new Chart();
 
   constructor() {}
 
