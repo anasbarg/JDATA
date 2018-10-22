@@ -1,7 +1,7 @@
 from flask import Flask, send_from_directory
 from flask import jsonify
-from helper_functions import xml_to_dict
-import data
+from rest_api.helper_functions import xml_to_dict
+import rest_api.data as data
 import json
 
 data_path = "data.csv"
@@ -89,9 +89,10 @@ def range_data(p_start, p_end, year_from, year_to):
 
 @app.route("/api/chart_config")
 def chart_config_json():
-    config_dict = xml_to_dict("chart_config.xml")
+    with open("chart_config.json") as f:
+        data = json.load(f)
     response = app.response_class(
-        response=json.dumps(config_dict),
+        response=json.dumps(data),
         status=200,
         mimetype='application/json'
     )
