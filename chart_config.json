@@ -1,47 +1,54 @@
 {
     "charts": [{
-        "dataProvider": "Threshold_range",
+        "data_provider": "Threshold_range",
         "title": "Boundaries Of Average Income",
         "subtitle": "Please Specify The Intervals",
         "type": "line",
-        "fillBetween": true,
-        "pointRadius": 2,
-        "pointDisplay": true,
-        "legendDisplay": true,
+        "fill_between": true,
+        "point_radius": 2.0,
+        "display_points": true,
+        "display_legend": true,
         "animation": true,
-        "gridDisplay": true,
+        "display_grid": true,
         "sliders": [{
-            "label": "Years Interval",
-            "type": "RangeYearSlider",
-            "pips": [1992, 2002, 2006, 2008, 2010, 2013]
-        }, {
-            "label": "Percentage Interval",
-            "type": "RangePercentageSlider"
-        }],
+                "label": "Years Interval",
+                "type": "RangeYearSlider",
+                "pips": [1992, 2002, 2006, 2008, 2010, 2013]
+            },
+            {
+                "label": "Percentage Interval",
+                "type": "RangePercentageSlider",
+                "pips": null
+            }
+        ],
         "yAxis": {
             "min": 0,
             "max": 1,
-            "scaleLabel": "",
-            "labelColor": "rgb(90, 20, 255)"
+            "scale_label": "Average Yearly Income",
+            "label_color": "rgb(90, 20, 255)"
         },
         "xAxis": {
-            "scaleLabel": "",
-            "labelColor": "rgb(90, 20, 255)"
+            "min": null,
+            "max": null,
+            "scale_label": "Average Yearly Income",
+            "label_color": "rgb(90, 20, 255)"
         },
         "datasets": [{
-            "datasetId": "min",
-            "label": "A label",
-            "color": "rgb(90, 30, 255)",
-            "borderWidth": 1,
-            "fill": true,
-            "tension": 1
-        }, {
-            "datasetId": "max",
-            "label": "A label",
-            "color": "rgb(90, 20, 255)",
-            "borderWidth": 1,
-            "fill": true,
-            "tension": 1
-        }]
+                "border_width": 1.0,
+                "color": "rgb(90, 30, 255)",
+                "dataset_id": "min",
+                "fill": false,
+                "label": "A label",
+                "tension": 1
+            },
+            {
+                "border_width": 1.0,
+                "color": "rgb(90, 20, 255)",
+                "dataset_id": "max",
+                "fill": false,
+                "label": "A label",
+                "tension": 1.0
+            }
+        ]
     }]
 }
