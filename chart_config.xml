@@ -1,15 +1,24 @@
 <root>
+
+    <!--Range Chart-->
     <chart 
         data_provider="Threshold_range"
         title="Boundaries Of Average Income"
         subtitle="Please Specify The Intervals"
         type="line"
         fillBetween="true"
-    >
+        pointRadius="2"
+        pointDisplay="true"
+        legendDisplay="true"
+        animation="true"
+        gridDisplay="true"
+        >
         <sliders>
-            <slider type="yearSlider" labels="[1992, 2002, 2006, 2008, 2010, 2013]"/>
+            <slider label="Years Interval" type="yearSlider" pips="[1992, 2002, 2006, 2008, 2010, 2013]"/>
             <slider type="percentageSlider"/>
         </sliders>
+        <yAxis min="0" max="1" scaleLabel=""/>
+        <xAxis scaleLabel=""/>
         <datasets>
             <dataset
                 dataset_id="min"
@@ -27,10 +36,5 @@
                 fill="true"
             />
         </datasets>
-        <!--  -->
-        <options pointRadius="2" legendDisplay="true">
-            <yAxis min="0" max="1" scaleLabel=""/>
-            <xAxis scaleLabel=""/>
-        </options>
     </chart>
 </root>
