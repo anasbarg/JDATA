@@ -1,4 +1,4 @@
-export interface Dataset {
+export class Dataset {
   datasetId: string;
   label: string;
   color: string;

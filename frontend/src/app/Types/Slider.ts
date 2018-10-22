@@ -1,4 +1,4 @@
-export interface Slider {
+export class Slider {
   type: string;
   labels?: Array<any>;
 }

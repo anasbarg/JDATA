@@ -2,7 +2,7 @@ import { Slider } from "./Slider";
 import { Dataset } from "./Dataset";
 import { ChartOptions } from "./ChartOptions";
 
-export interface Chart {
+export class Chart {
   dataProvider: string;
   title: string;
   subtitle: string;
@@ -11,4 +11,5 @@ export interface Chart {
   sliders: Array<Slider>;
   datasets: Array<Dataset>;
   options: ChartOptions;
+  constructor() {}
 }

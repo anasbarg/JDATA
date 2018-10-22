@@ -1,4 +1,4 @@
-export interface ChartOptions {
+export class ChartOptions {
   pointRadius: Number;
   legendDisplay: boolean;
   yAxis: { min: Number; max: Number; scaleLabel: string };

@@ -1,5 +1,5 @@
 import { Chart } from "./Chart";
 
-export interface ChartConfig {
+export class ChartConfig {
   charts: Array<Chart>;
 }
