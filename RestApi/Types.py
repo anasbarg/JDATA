@@ -8,6 +8,11 @@ class ChartConfig:
             self.charts.append(chart)
         else:
             raise TypeError("Expecting argument of type: Chart")
+    def to_dict(self):
+        dict_ = {"charts":[]}
+        for chart in self.charts:
+            dict_["charts"].append(chart.to_dict())
+        return dict_
 
 class Chart:
     subtitle = ""
@@ -47,9 +52,28 @@ class Chart:
             self.animation : bool = kwargs["animation"]
         if "display_grid" in kwargs:
             self.display_grid : bool = kwargs["display_grid"]
+    
+    def to_dict(self):
+        dict_ = {}
+        dict_["title"] = self.title
+        dict_["subtitle"] = self.subtitle
+        dict_["type"] = self.type
+        dict_["fill_between"] = self.fill_between
+        dict_["point_radius"] = self.point_radius
+        dict_["display_points"] = self.display_points
+        dict_["display_legend"] = self.display_legend
+        dict_["animation"] = self.animation
+        dict_["display_grid"] = self.display_grid
+        dict_["data_provider"] = self.data_provider
+        dict_["sliders"] = [slider.to_dict() for slider in self.sliders]
+        dict_["yAxis"] = self.yAxis.to_dict()
+        dict_["xAxis"] = self.xAxis.to_dict()
+        dict_["datasets"] = [dataset.to_dict() for dataset in self.datasets]
+        return dict_
+
 
 class Slider:
-    self.pips = None
+    pips = None
     def __init__(self, **kwargs):
         # handling required kwargs
         try:
@@ -61,11 +85,19 @@ class Slider:
         # handling optional kwargs
         if "pips" in kwargs:
             self.pips : List[int] = kwargs["pips"]
+    
+    def to_dict(self):
+        dict_ = {}
+        dict_["pips"] = self.pips
+        dict_["label"] = self.label
+        dict_["type"] = self.type
+        return dict_
+
 
 class Axis:
     min = None
     max = None
-    def __init_(self, **kwargs):
+    def __init__(self, **kwargs):
         # handling required kwargs
         try:
             self.scale_label : str = kwargs["scale_label"]
@@ -78,6 +110,14 @@ class Axis:
             self.min : int = kwargs["min"]
         if "max" in kwargs:
             self.max : int = kwargs["max"]
+
+    def to_dict(self):
+        dict_ = {}
+        dict_["min"] = self.min
+        dict_["max"] = self.max
+        dict_["scale_label"] = self.scale_label
+        dict_["label_color"] = self.label_color
+        return dict_
 
 class Dataset:
     label = ""
@@ -103,3 +143,12 @@ class Dataset:
             self.fill : bool = kwargs["fill"]
         if "tension" in kwargs:
             self.tension : float = kwargs["tension"]
+    def to_dict(self):
+        dict_ = {}
+        dict_["label"] = self.label
+        dict_["color"] = self.color
+        dict_["border_width"] = self.border_width
+        dict_["fill"] = self.fill
+        dict_["tension"] = self.tension
+        dict_["dataset_id"] = self.dataset_id
+        return dict_
