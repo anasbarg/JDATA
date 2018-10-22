@@ -10,5 +10,9 @@
     "Scripts": true,
     "tcl": true,
     "**/__pycache__": true,
+    "**/.gitignore": true,
+    "pip-selfcheck.json": true,
+    "README.md": true,
+    "requirements.txt": true,
   }
 }
