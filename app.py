@@ -13,6 +13,7 @@ def add_header(r):
     Add headers to both force latest IE rendering engine or Chrome Frame,
     and also to cache the rendered page for 10 minutes.
     """
+    r.headers['Acess-Control-Allow-Origin'] = '*'
     r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     r.headers["Pragma"] = "no-cache"
     r.headers["Expires"] = "0"
@@ -22,12 +23,12 @@ def add_header(r):
 @app.route("/")
 @app.route("/home")
 def home():
-    return send_from_directory('frontend/dist', "index.html")
+    return send_from_directory('frontend/dist/frontend', "index.html")
 
 @app.route("/js/<path:path>")
 def js(path):
     print(path)
-    return send_from_directory('frontend/dist/', path)
+    return send_from_directory('frontend/dist/frontend/', path)
 
 @app.route("/css/<path:path>")
 def css(path):
