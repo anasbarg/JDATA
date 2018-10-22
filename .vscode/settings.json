@@ -14,7 +14,6 @@
     "pip-selfcheck.json": true,
     "README.md": true,
     "requirements.txt": true,
-    "xml_to_dict.py": true,
-    "chart_config.xml": true
+    "xml_to_dict.py": true
   }
 }
