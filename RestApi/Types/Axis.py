@@ -1,15 +1,17 @@
 class Axis:
     min = None
     max = None
+    label_color = "rgb(104, 104, 104)"
     def __init__(self, **kwargs):
         # handling required kwargs
         try:
             self.scale_label : str = kwargs["scale_label"]
-            self.label_color : str = kwargs["label_color"]
         except KeyError as e:
             print(f'{e} is required to create an object of type: Axis')
 
         # handling optional kwargs
+        if "label_color" in kwargs:
+            self.label_color : str = kwargs["label_color"]
         if "min" in kwargs:
             self.min : int = kwargs["min"]
         if "max" in kwargs:

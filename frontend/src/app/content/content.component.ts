@@ -9,7 +9,7 @@ import { ChartConfigService } from "../services/chart-config.service";
   styleUrls: ["./content.component.scss"]
 })
 export class ContentComponent implements OnInit {
-  chartConfig: ChartConfig = new ChartConfig();
+  chartConfig: ChartConfig;
   constructor(private _chartConfigService: ChartConfigService) {}
 
   ngOnInit() {

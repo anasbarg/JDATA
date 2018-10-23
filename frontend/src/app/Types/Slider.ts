@@ -1,10 +1,10 @@
 export class Slider {
-  label: string;
   type: string;
+  label: string;
   pips: Array<any>;
-  constructor(label: string, type: string, pips?: Array<any>) {
-    this.label = label;
+  constructor(type: string, label?: string, pips?: Array<any>) {
     this.type = type;
+    this.label = label ? label : "";
     this.pips = pips ? pips : null;
   }
 }

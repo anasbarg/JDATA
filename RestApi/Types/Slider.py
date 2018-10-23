@@ -1,9 +1,9 @@
 class Slider:
     pips = None
+    label = ""
     def __init__(self, **kwargs):
         # handling required kwargs
         try:
-            self.label : str = kwargs["label"]
             self.type  : str = kwargs["type"]
         except KeyError as e:
             print(f'{e} is required to create an object of type: Slider')
@@ -11,6 +11,8 @@ class Slider:
         # handling optional kwargs
         if "pips" in kwargs:
             self.pips : List[int] = kwargs["pips"]
+        if "label" in kwargs:
+            self.label : str = kwargs["label"]
     
     def to_dict(self):
         dict_ = {}

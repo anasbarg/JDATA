@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Chart } from "../Types/Chart";
+
 @Component({
   selector: "app-chart-card",
   templateUrl: "./chart-card.component.html",
@@ -7,7 +8,7 @@ import { Chart } from "../Types/Chart";
 })
 export class ChartCardComponent implements OnInit {
   @Input("chart")
-  chart: Chart = new Chart();
+  chart: Chart;
 
   constructor() {}
 
