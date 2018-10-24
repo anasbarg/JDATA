@@ -1,8 +1,8 @@
 <div class="content-navbar-bg">
   <div class="container">
     <mat-tab-group [@.disabled]="true">
-      <div *ngFor="let chart of chartConfig['charts']">
-        <mat-tab label="{{ chart['title'] }}">
+      <div *ngFor="let chart of chartConfig.charts">
+        <mat-tab label="{{ chart.title }}">
           <app-chart-card [chart]="chart"></app-chart-card>
         </mat-tab>
       </div>
