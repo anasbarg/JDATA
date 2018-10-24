@@ -1,6 +1,30 @@
 <ul class="list-group">
-  <li *ngFor="let controller of chartControllers" class="list-group-item">
-    <h6>{{controller.label}} :</h6>
-    <app-slider [slider-config]="controller"></app-slider>
+  <li class="list-group-item active" style="background: #3F51B5; border: 1px #3F51B5 solid;">Input</li>
+  <li *ngFor="let controller of chartControllers.controllers_list" class="list-group-item">
+    <div *ngIf="controller.isSlider()">
+      <h6>{{controller.label}}</h6>
+      <div class="container">
+        <div class="row">
+          <div class="col-6" style="padding: 0; margin:0; padding-right: 5px;">
+            <p style="margin-bottom:0;  margin-left: 1px;">Start:</p>
+            <select class="custom-select" id="inputGroupSelect01">
+              <option selected>Choose...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="col-6" style="padding: 0; margin: 0;">
+            <p style="margin-bottom:0; margin-left: 1px;">End:</p>
+            <select class="custom-select" id="inputGroupSelect01">
+              <option selected>Choose...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
   </li>
 </ul>
