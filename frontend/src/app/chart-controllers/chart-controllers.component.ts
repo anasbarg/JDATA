@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Slider } from "../Types/Slider";
+import { IController } from "../Types/IController";
 @Component({
   selector: "app-chart-controllers",
   templateUrl: "./chart-controllers.component.html",
@@ -7,7 +7,7 @@ import { Slider } from "../Types/Slider";
 })
 export class ChartControllersComponent implements OnInit {
   @Input("chart")
-  chart: Array<Slider>;
+  chart: Array<IController>;
   constructor() {}
 
   ngOnInit() {
