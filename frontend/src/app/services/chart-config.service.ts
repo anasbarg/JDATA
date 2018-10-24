@@ -16,7 +16,14 @@ export class ChartConfigService {
       "Threshold_range",
       "Boudaries Of Average Income",
       [
-        new Slider("RangeYearSlider", "Year Interval"),
+        new Slider("RangeYearSlider", "Year Interval", [
+          1992,
+          2002,
+          2006,
+          2008,
+          2010,
+          2013
+        ]),
         new Slider("RangePercentageSlider", "Percentage Interval")
       ],
       new Axis("Average Income"),
