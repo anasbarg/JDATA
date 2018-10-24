@@ -15,9 +15,10 @@ import { ContentComponent } from "./content/content.component";
 // Services
 import { ChartConfigService } from "./services/chart-config.service";
 import { ChartCardComponent } from './chart-card/chart-card.component';
+import { ChartControllersComponent } from './chart-controllers/chart-controllers.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, ContentComponent, ChartCardComponent],
+  declarations: [AppComponent, NavbarComponent, ContentComponent, ChartCardComponent, ChartControllersComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
