@@ -28,7 +28,25 @@ export class ChartConfigService {
       ],
       new Axis("Average Income"),
       new Axis("Year"),
-      [new Dataset("min"), new Dataset("min")]
+      [new Dataset("min"), new Dataset("max")]
+    ),
+    new Chart(
+      "share",
+      "Share",
+      [
+        new Slider("RangeYearSlider", "Year Interval", [
+          1992,
+          2002,
+          2006,
+          2008,
+          2010,
+          2013
+        ]),
+        new Slider("RangePercentageSlider", "Percentage Interval")
+      ],
+      new Axis("Average Income"),
+      new Axis("Year"),
+      [new Dataset("share")]
     )
   ]);
 
