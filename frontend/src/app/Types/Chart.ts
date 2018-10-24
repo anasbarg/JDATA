@@ -1,3 +1,4 @@
+import { IController } from "./IController";
 import { Slider } from "./Slider";
 import { Dataset } from "./Dataset";
 import { Axis } from "./Axis";
@@ -13,14 +14,14 @@ export class Chart {
   display_legend: boolean;
   animation: boolean;
   display_grid: boolean;
-  sliders: Array<Slider>;
+  controllers: Array<IController>;
   yAxis: Axis;
   xAxis: Axis;
   datasets: Array<Dataset>;
   constructor(
     data_provider: string,
     title: string,
-    sliders: Array<Slider>,
+    controllers: Array<IController>,
     yAxis: Axis,
     xAxis: Axis,
     datasets: Array<Dataset>,
@@ -36,7 +37,7 @@ export class Chart {
     // Requiered
     this.data_provider = data_provider;
     this.title = title;
-    this.sliders = sliders;
+    this.controllers = controllers;
     this.yAxis = yAxis;
     this.xAxis = xAxis;
     this.datasets = datasets;

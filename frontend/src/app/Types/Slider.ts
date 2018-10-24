@@ -1,4 +1,6 @@
-export class Slider {
+import { IController } from "./IController";
+
+export class Slider implements IController {
   type: string;
   label: string;
   pips: Array<any>;

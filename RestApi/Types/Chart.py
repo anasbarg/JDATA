@@ -17,7 +17,7 @@ class Chart:
         try:
             self.title : str = kwargs["title"]
             self.data_provider : str = kwargs["data_provider"]
-            self.sliders : List[Slider] = kwargs["sliders"]
+            self.controllers : List = kwargs["controllers"]
             self.yAxis : Axis = kwargs["yAxis"]
             self.xAxis : Axis = kwargs["xAxis"]
             self.datasets : List[Dataset] = kwargs["datasets"]
@@ -54,7 +54,7 @@ class Chart:
         dict_["animation"] = self.animation
         dict_["display_grid"] = self.display_grid
         dict_["data_provider"] = self.data_provider
-        dict_["sliders"] = [slider.to_dict() for slider in self.sliders]
+        dict_["controllers"] = [controller.to_dict() for controller in self.controllers]
         dict_["yAxis"] = self.yAxis.to_dict()
         dict_["xAxis"] = self.xAxis.to_dict()
         dict_["datasets"] = [dataset.to_dict() for dataset in self.datasets]

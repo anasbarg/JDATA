@@ -12,7 +12,7 @@ range_chart = Chart(
     display_legend = True,
     animation = True,
     display_grid = True,
-    sliders = [
+    controllers = [
         Slider(label="Years Interval", type="RangeYearSlider", pips=[1992, 2002, 2006, 2008, 2010, 2013]),
         Slider(label="Percentage Interval", type="RangePercentageSlider")
     ],
