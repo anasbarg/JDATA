@@ -10,7 +10,5 @@ export class ChartControllersComponent implements OnInit {
   chartControllers: Array<IController>;
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.chartControllers);
-  }
+  ngOnInit() {}
 }
