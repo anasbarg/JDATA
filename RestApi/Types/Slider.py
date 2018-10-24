@@ -18,5 +18,6 @@ class Slider:
         dict_ = {}
         dict_["pips"] = self.pips
         dict_["label"] = self.label
-        dict_["type"] = self.type
+        dict_["type"] = "slider"
+        dict_["slider_type"] = self.type
         return dict_

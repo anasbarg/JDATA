@@ -9,4 +9,8 @@ export class Slider implements IController {
     this.label = label ? label : "";
     this.pips = pips ? pips : null;
   }
+
+  isSlider() {
+    return true;
+  }
 }

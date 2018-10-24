@@ -12,10 +12,11 @@ range_chart = Chart(
     display_legend = True,
     animation = True,
     display_grid = True,
-    controllers = [
+    controllers = ControllersList(
         Slider(label="Years Interval", type="RangeYearSlider", pips=[1992, 2002, 2006, 2008, 2010, 2013]),
-        Slider(label="Percentage Interval", type="RangePercentageSlider")
-    ],
+        Slider(label="Percentage Interval", type="RangePercentageSlider"),
+        header_text = "Input"
+    ),
     yAxis = Axis(min=0, max=1, scale_label="Average Yearly Income", label_color="rgb(90, 20, 255)"),
     xAxis = Axis(scale_label="Average Yearly Income", label_color="rgb(90, 20, 255)"),
     datasets = [

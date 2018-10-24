@@ -1,7 +1,6 @@
-import { IController } from "./IController";
-import { Slider } from "./Slider";
 import { Dataset } from "./Dataset";
 import { Axis } from "./Axis";
+import { ControllersList } from "./ControllersList";
 
 export class Chart {
   data_provider: string;
@@ -14,14 +13,14 @@ export class Chart {
   display_legend: boolean;
   animation: boolean;
   display_grid: boolean;
-  controllers: Array<IController>;
+  controllers: ControllersList;
   yAxis: Axis;
   xAxis: Axis;
   datasets: Array<Dataset>;
   constructor(
     data_provider: string,
     title: string,
-    controllers: Array<IController>,
+    controllers: ControllersList,
     yAxis: Axis,
     xAxis: Axis,
     datasets: Array<Dataset>,

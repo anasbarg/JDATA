@@ -2,6 +2,7 @@ from typing import List, Dict, Tuple
 from RestApi.Types.Slider import *
 from RestApi.Types.Axis import *
 from RestApi.Types.Dataset import *
+from RestApi.Types.ControllersList import *
 
 class Chart:
     subtitle = ""
@@ -17,7 +18,7 @@ class Chart:
         try:
             self.title : str = kwargs["title"]
             self.data_provider : str = kwargs["data_provider"]
-            self.controllers : List = kwargs["controllers"]
+            self.controllers : ControllersList = kwargs["controllers"]
             self.yAxis : Axis = kwargs["yAxis"]
             self.xAxis : Axis = kwargs["xAxis"]
             self.datasets : List[Dataset] = kwargs["datasets"]
@@ -54,7 +55,7 @@ class Chart:
         dict_["animation"] = self.animation
         dict_["display_grid"] = self.display_grid
         dict_["data_provider"] = self.data_provider
-        dict_["controllers"] = [controller.to_dict() for controller in self.controllers]
+        dict_["controllers"] = self.controllers.to_dict()
         dict_["yAxis"] = self.yAxis.to_dict()
         dict_["xAxis"] = self.xAxis.to_dict()
         dict_["datasets"] = [dataset.to_dict() for dataset in self.datasets]
