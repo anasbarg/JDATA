@@ -1,6 +1,6 @@
 <ul class="list-group">
   <li *ngFor="let controller of chartControllers" class="list-group-item">
     <h6>{{controller.label}} :</h6>
-    <app-slider></app-slider>
+    <app-slider [slider-config]="controller"></app-slider>
   </li>
 </ul>
