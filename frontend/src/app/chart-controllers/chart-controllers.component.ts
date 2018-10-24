@@ -6,11 +6,11 @@ import { IController } from "../Types/IController";
   styleUrls: ["./chart-controllers.component.scss"]
 })
 export class ChartControllersComponent implements OnInit {
-  @Input("chart")
-  chart: Array<IController>;
+  @Input("chart-controllers")
+  chartControllers: Array<IController>;
   constructor() {}
 
   ngOnInit() {
-    console.log(this.chart);
+    console.log(this.chartControllers);
   }
 }
