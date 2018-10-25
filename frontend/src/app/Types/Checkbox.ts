@@ -10,4 +10,12 @@ export class Checkbox implements IController {
   isCheckbox() {
     return true;
   }
+
+  isDropdown() {
+    return false;
+  }
+
+  isSlider() {
+    return false;
+  }
 }
