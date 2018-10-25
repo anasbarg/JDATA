@@ -2,6 +2,7 @@ from typing import List, Dict, Tuple
 from RestApi.Types.Slider import *
 from RestApi.Types.Axis import *
 from RestApi.Types.Dataset import *
+from RestApi.Types.Dropdown import *
 from RestApi.Types.ControllersList import *
 
 class Chart:

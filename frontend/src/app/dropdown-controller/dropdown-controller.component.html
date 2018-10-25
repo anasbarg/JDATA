@@ -1,0 +1,27 @@
+<h5 style="font-weight: bold">{{this.dropdownConfig.title}}</h5>
+<div *ngIf="is2Dropdowns()" class="container">
+  <div class="row">
+    <div class="col-6" style="padding: 0; margin:0; padding-right: 5px;">
+      <p style="margin-bottom:0;  margin-left: 1px;">{{dropdownConfig.label}}</p>
+      <select class="custom-select" id="inputGroupSelect01">
+        <option *ngFor="let item of dropdownConfig.items">{{item}}</option>
+      </select>
+    </div>
+    <div class="col-6" style="padding: 0; margin: 0;">
+      <p style="margin-bottom:0; margin-left: 1px;">{{dropdownConfig.label2}}</p>
+      <select class="custom-select" id="inputGroupSelect01">
+        <option *ngFor="let item of dropdownConfig.items2">{{item}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div *ngIf="!is2Dropdowns()" class="container">
+  <div class="row">
+    <div class="col-12" style="padding: 0; margin:0; padding-right: 5px;">
+      <p style="margin-bottom:0;  margin-left: 1px;">{{dropdownConfig.label}}</p>
+      <select class="custom-select" id="inputGroupSelect01">
+        <option *ngFor="let item of dropdownConfig.items">{{item}}</option>
+      </select>
+    </div>
+  </div>
+</div>
