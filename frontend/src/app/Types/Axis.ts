@@ -1,13 +1,9 @@
 export class Axis {
-  min: Number;
-  max: Number;
-  scale_label: string;
-  label_color: string;
   constructor(
-    scale_label: string,
-    label_color?: string,
-    max?: Number,
-    min?: Number
+    public scale_label: string,
+    public label_color?: string,
+    public max?: Number,
+    public min?: Number
   ) {
     this.scale_label = scale_label;
     this.label_color = label_color ? label_color : "rgb(104, 104, 104)";

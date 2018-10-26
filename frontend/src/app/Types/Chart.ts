@@ -3,35 +3,21 @@ import { Axis } from "./Axis";
 import { ControllersList } from "./ControllersList";
 
 export class Chart {
-  data_provider: string;
-  title: string;
-  subtitle: string;
-  type: string;
-  fill_between: boolean;
-  point_radius: Number;
-  display_points: boolean;
-  display_legend: boolean;
-  animation: boolean;
-  display_grid: boolean;
-  controllers: ControllersList;
-  yAxis: Axis;
-  xAxis: Axis;
-  datasets: Array<Dataset>;
   constructor(
-    data_provider: string,
-    title: string,
-    controllers: ControllersList,
-    yAxis: Axis,
-    xAxis: Axis,
-    datasets: Array<Dataset>,
-    subtitle?: string,
-    type?: string,
-    fill_between?: boolean,
-    point_radius?: Number,
-    display_points?: boolean,
-    display_legend?: boolean,
-    animation?: boolean,
-    display_grid?: boolean
+    public data_provider: string,
+    public title: string,
+    public controllers: ControllersList,
+    public yAxis: Axis,
+    public xAxis: Axis,
+    public datasets: Array<Dataset>,
+    public subtitle?: string,
+    public type?: string,
+    public fill_between?: boolean,
+    public point_radius?: Number,
+    public display_points?: boolean,
+    public display_legend?: boolean,
+    public animation?: boolean,
+    public display_grid?: boolean
   ) {
     // Requiered
     this.data_provider = data_provider;

@@ -1,17 +1,12 @@
 import { IController } from "./IController";
 
 export class Dropdown implements IController {
-  title: string;
-  label: string;
-  items: Array<any>;
-  label2: string;
-  items2: Array<any>;
   constructor(
-    items: Array<any>,
-    label?: string,
-    title?: string,
-    items2?: Array<any>,
-    label2?: string
+    public items: Array<any>,
+    public label?: string,
+    public title?: string,
+    public items2?: Array<any>,
+    public label2?: string
   ) {
     this.items = items; // handeling required attribute
     this.label = label ? label : ""; // handeling optional attribute

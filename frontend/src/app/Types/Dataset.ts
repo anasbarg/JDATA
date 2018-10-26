@@ -1,18 +1,11 @@
 export class Dataset {
-  dataset_id: string;
-  label: string;
-  color: string;
-  border_width: Number;
-  fill: boolean;
-  tension: Number;
-
   constructor(
-    dataset_id: string,
-    label?: string,
-    color?: string,
-    border_width?: Number,
-    fill?: boolean,
-    tension?: Number
+    public dataset_id: string,
+    public label?: string,
+    public color?: string,
+    public border_width?: Number,
+    public fill?: boolean,
+    public tension?: Number
   ) {
     this.dataset_id = dataset_id;
     this.label = label ? label : "";
