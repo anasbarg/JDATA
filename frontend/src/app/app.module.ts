@@ -12,13 +12,11 @@ import { CommonModule } from "@angular/common";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { ContentComponent } from "./content/content.component";
-
-// Services
-import { ChartConfigService } from "./services/chart-config.service";
 import { ChartCardComponent } from "./chart-card/chart-card.component";
 import { ChartControllersComponent } from "./chart-controllers/chart-controllers.component";
 import { SliderComponent } from "./slider/slider.component";
 import { DropdownControllerComponent } from "./dropdown-controller/dropdown-controller.component";
+import { ChartComponent } from "./chart/chart.component";
 
 @NgModule({
   declarations: [
@@ -28,7 +26,8 @@ import { DropdownControllerComponent } from "./dropdown-controller/dropdown-cont
     ChartCardComponent,
     ChartControllersComponent,
     SliderComponent,
-    DropdownControllerComponent
+    DropdownControllerComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +38,6 @@ import { DropdownControllerComponent } from "./dropdown-controller/dropdown-cont
     HttpClientModule,
     CommonModule
   ],
-  providers: [ChartConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
