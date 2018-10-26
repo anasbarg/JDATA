@@ -12,6 +12,9 @@ range_chart = Chart(
     display_legend = True,
     animation = True,
     display_grid = True,
+    # Each Controller Should Have A Distinct Title.
+    # If Two Controllers Have To Have The Same Title
+    # Then Just Add An Extra Space To One Of Them. 
     controllers = ControllersList(
         Slider(title="Percentage Interval", type="RangePercentageSlider"),
         Dropdown(
