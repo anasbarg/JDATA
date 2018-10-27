@@ -22,6 +22,7 @@ class Chart:
             self.controllers : ControllersList = kwargs["controllers"]
             self.yAxis : Axis = kwargs["yAxis"]
             self.xAxis : Axis = kwargs["xAxis"]
+            self.labels : List = kwargs["labels"]
             self.datasets : List[Dataset] = kwargs["datasets"]
         except KeyError as e:
             print(f'{e} is required to create an object of type: Chart')
@@ -59,5 +60,6 @@ class Chart:
         dict_["controllers"] = self.controllers.to_dict()
         dict_["yAxis"] = self.yAxis.to_dict()
         dict_["xAxis"] = self.xAxis.to_dict()
+        dict_["labels"] = self.labels
         dict_["datasets"] = [dataset.to_dict() for dataset in self.datasets]
         return dict_

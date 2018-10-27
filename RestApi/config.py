@@ -12,6 +12,7 @@ range_chart = Chart(
     display_legend = True,
     animation = True,
     display_grid = True,
+    labels = [1992, 2002, 2006, 2008, 2010, 2013],
     # Each Controller Should Have A Distinct Title.
     # If Two Controllers Have To Have The Same Title
     # Then Just Add An Extra Space To One Of Them. 
