@@ -5,7 +5,7 @@ import { ChartConfig } from '../Types/ChartConfig';
 import { Chart } from '../Types/Chart';
 import { Slider } from '../Types/Slider';
 import { Dataset } from '../Types/Dataset';
-import { Axis } from '../Types/Axis';
+import { YAxis, XAxis } from '../Types/Axes';
 import { ControllersList } from '../Types/ControllersList';
 import { Dropdown } from '../Types/Dropdown';
 
@@ -23,9 +23,9 @@ export class ChartConfigService {
         new Dropdown([1, 2, 3], 'Start', 'kkk', [2, 3, 5], 'End'),
         new Dropdown([5, 56, 34.6], 'Start', 'kkkk')
       ),
-      new Axis('Average Income'),
-      new Axis('Year'),
-      [new Dataset('min'), new Dataset('max')],
+      new YAxis('Average Income'),
+      new XAxis('Year'),
+      [new Dataset('min', 'Min'), new Dataset('max', 'Max')],
       'subtitle',
       'line',
       false,
@@ -51,8 +51,8 @@ export class ChartConfigService {
         ]),
         new Slider('RangePercentageSlider', 'Percentage Interval')
       ),
-      new Axis('Average Income'),
-      new Axis('Year'),
+      new YAxis('Average Income'),
+      new XAxis('Year'),
       [new Dataset('share')]
     ),
   ]);
