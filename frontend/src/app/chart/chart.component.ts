@@ -75,6 +75,12 @@ export class ChartComponent implements AfterViewInit {
             ],
             xAxes: [
               {
+                ticks: {
+                  stepSize: 1,
+                  autoSkip: false,
+                },
+                type: this.chart.xAxis.type,
+                position: 'bottom',
                 scaleLabel: {
                   display: this.chart.xAxis.scale_label ? true : false,
                   labelString: this.chart.xAxis.scale_label,

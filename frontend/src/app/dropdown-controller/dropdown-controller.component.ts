@@ -1,13 +1,14 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { Dropdown } from "../Types/Dropdown";
+import { Component, OnInit, Input } from '@angular/core';
+import { Dropdown } from '../Types/Dropdown';
 
 @Component({
-  selector: "app-dropdown-controller",
-  templateUrl: "./dropdown-controller.component.html",
-  styleUrls: ["./dropdown-controller.component.scss"]
+  selector: 'app-dropdown-controller',
+  templateUrl: './dropdown-controller.component.html',
+  styleUrls: ['./dropdown-controller.component.scss'],
 })
 export class DropdownControllerComponent implements OnInit {
-  @Input("dropdown-config")
+  // tslint:disable-next-line:no-input-rename
+  @Input('dropdown-config')
   dropdownConfig: Dropdown;
   constructor() {}
 
