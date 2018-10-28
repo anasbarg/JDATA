@@ -4,10 +4,8 @@ export class Slider implements IController {
   constructor(
     public type: string,
     public title: string = '',
-    public pips?: Array<any>
-  ) {
-    this.pips = pips ? pips : null;
-  }
+    public pips: Array<any> | null = null
+  ) {}
 
   isSlider() {
     return true;

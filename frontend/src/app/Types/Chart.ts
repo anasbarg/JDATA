@@ -1,5 +1,5 @@
 import { Dataset } from './Dataset';
-import { Axis } from './Axis';
+import { XAxis, YAxis } from './Axes';
 import { ControllersList } from './ControllersList';
 
 export class Chart {
@@ -8,8 +8,8 @@ export class Chart {
     public title: string,
     public labels: Array<any>,
     public controllers: ControllersList,
-    public yAxis: Axis,
-    public xAxis: Axis,
+    public yAxis: YAxis,
+    public xAxis: XAxis,
     public datasets: Array<Dataset>,
     public subtitle: string = '',
     public type: string = 'line',
