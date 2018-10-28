@@ -27,8 +27,8 @@ range_chart = Chart(
         ),
         header_text = "Input"
     ),
-    yAxis = Axis(min=0, max=1, scale_label="Average Yearly Income", label_color="rgb(90, 20, 255)"),
-    xAxis = Axis(scale_label="Average Yearly Income", label_color="rgb(90, 20, 255)"),
+    yAxis = YAxis(min=0, max=1, scale_label="Average Yearly Income", label_color="rgb(90, 20, 255)"),
+    xAxis = XAxis(scale_label="Average Yearly Income", label_color="rgb(90, 20, 255)"),
     datasets = [
         Dataset(
             dataset_id = "min",

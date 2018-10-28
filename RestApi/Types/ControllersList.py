@@ -1,7 +1,5 @@
 class ControllersList:
 
-
-
     header_text = "Input Controllers"
     def __init__(self, *args, **kwargs):
         #handeling optional attributes
@@ -17,7 +15,6 @@ class ControllersList:
         return iter(self.controllers_list)
 
     def to_dict(self):
-        dict_ = {}
-        dict_["header_text"] = self.header_text
+        dict_ = self.__dict__
         dict_["controllers_list"] = [controller.to_dict() for controller in self.controllers_list]
         return dict_
