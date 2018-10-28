@@ -5,8 +5,8 @@ import { ControllersList } from './ControllersList';
 export class Chart {
     constructor(
         public data_provider: string,
-        public labels: Array<any>,
         public title: string,
+        public labels: Array<any>,
         public controllers: ControllersList,
         public yAxis: Axis,
         public xAxis: Axis,
@@ -27,6 +27,7 @@ export class Chart {
         this.yAxis = yAxis;
         this.xAxis = xAxis;
         this.datasets = datasets;
+        this.labels = labels;
         // Optionals
         this.subtitle = subtitle ? subtitle : '';
         this.type = type ? type : 'line';
