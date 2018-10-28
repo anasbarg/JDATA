@@ -1,7 +1,5 @@
-import { Chart } from "./Chart";
+import { Chart } from './Chart';
 
 export class ChartConfig {
-  constructor(public charts: Array<Chart>) {
-    this.charts = charts;
-  }
+  constructor(public charts: Array<Chart>) {}
 }
