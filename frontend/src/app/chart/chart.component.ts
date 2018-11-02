@@ -39,13 +39,16 @@ export class ChartComponent implements AfterViewInit {
               backgroundColor: this.rgba(color[0], color[1], color[2], 0.15),
               borderColor: dataset.color,
               borderWidth: dataset.border_width,
-              fill: true,
+              fill: this.chart.fill_between ? 1 : dataset.fill ? true : false,
               lineTension: dataset.tension,
               tension: dataset.tension,
             };
           }),
         },
         options: {
+          animation: {
+            duration: this.chart.animation ? 1000 : 0,
+          },
           elements: {
             point: {
               radius: this.chart.display_points ? this.chart.point_radius : 0,
@@ -70,11 +73,15 @@ export class ChartComponent implements AfterViewInit {
                 scaleLabel: {
                   display: this.chart.yAxis.scale_label ? true : false,
                   labelString: this.chart.yAxis.scale_label,
+                  fontColor: this.chart.yAxis.label_color,
                 },
               },
             ],
             xAxes: [
               {
+                gridLines: {
+                  display: this.chart.display_grid,
+                },
                 ticks: {
                   stepSize: 1,
                   autoSkip: false,
@@ -84,78 +91,16 @@ export class ChartComponent implements AfterViewInit {
                 scaleLabel: {
                   display: this.chart.xAxis.scale_label ? true : false,
                   labelString: this.chart.xAxis.scale_label,
+                  fontColor: this.chart.xAxis.label_color,
                 },
               },
             ],
           },
         },
       }
-      /*{
-        type: 'line',
-        data: {
-          labels: this.chart.labels,
-          datasets: this.chart.datasets.map(dataset => {
-            return {
-              label: dataset.label,
-              data: [1, 2, 3, 4, 5, 6, 7],
-              backgroundColor: dataset.color,
-              borderColor: dataset.color,
-              borderWidth: dataset.border_width,
-              fill: dataset.fill,
-              lineTension: dataset.tension,
-              tension: dataset.tension,
-            };
-          }),
-        },
-        options: {
-          elements: {
-            point: {
-              radius: this.chart.display_points ? this.chart.point_radius : 0,
-              pointStyle: 'circle',
-            },
-          },
-          legend: {
-            display: this.chart.display_legend,
-          },
-          scales: {
-            type: 'linear',
-            yAxes: [
-              {
-                gridLines: {
-                  display: this.chart.display_grid,
-                },
-                ticks: {
-                  max: this.chart.yAxis.max,
-                  min: this.chart.yAxis.min,
-                },
-                scaleLabel: {
-                  display: this.chart.yAxis.scale_label ? true : false,
-                  labelString: this.chart.yAxis.scale_label,
-                },
-              },
-            ],
-            xAxes: [
-              {
-                gridLines: {
-                  display: this.chart.display_grid,
-                },
-                ticks: {
-                  stepSize: 1,
-                  autoSkip: false,
-                },
-                type: 'linear',
-                position: 'bottom',
-                scaleLabel: {
-                  display: this.chart.xAxis.scale_label ? true : false,
-                  labelString: this.chart.xAxis.scale_label,
-                },
-              },
-            ],
-          },
-        },
-      }*/
     );
   }
+
   private RgbToList(rgb: string) {
     const m = rgb.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i);
     if (m) {

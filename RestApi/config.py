@@ -33,8 +33,8 @@ range_chart = Chart(
         ),
         header_text = "Input Controllers"
     ),
-    yAxis = YAxis(min=0, scale_label="Average Yearly Income", label_color="rgb(90, 20, 255)"),
-    xAxis = XAxis(scale_label="Average Yearly Income", label_color="rgb(90, 20, 255)"),
+    yAxis = YAxis(min=0, scale_label="Average Yearly Income", label_color="rgb(90, 20, 255)", label_size=12),
+    xAxis = XAxis(scale_label="Average Yearly Income", label_color="rgb(90, 20, 255)", label_size=12),
     datasets = [
         Dataset(
             dataset_id = "min",
@@ -100,4 +100,5 @@ chart_config = ChartConfig(
     dist_chart
 )
 
-print(chart_config.to_dict())
+import json
+print(json.dumps(chart_config.to_dict()))

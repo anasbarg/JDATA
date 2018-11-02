@@ -107,12 +107,14 @@ export class ChartConfigService {
         new YAxis(
           chart.yAxis.scale_label,
           chart.yAxis.label_color,
+          chart.yAxis.label_size,
           chart.yAxis.max,
           chart.yAxis.min
         ),
         new XAxis(
           chart.xAxis.scale_label,
           chart.xAxis.label_color,
+          chart.xAxis.label_size,
           chart.xAxis.type
         ),
         datasets,
