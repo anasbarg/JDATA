@@ -3,11 +3,12 @@
     <mat-card-title>{{chart.title}}</mat-card-title>
     <mat-card-subtitle>{{chart.subtitle}}</mat-card-subtitle>
     <mat-card-content>
-      <div class="row">
-        <div class="col-4">
+      <div class="row" [style.marginTop.px]="chart.display_legend ? -30 : 0">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-md-push-8 col-lg-push-8 col-xl-push-8"
+          [style.paddingTop.px]="chart.display_legend ? 30 : 0" [style.marginBottom.px]="10">
           <app-chart-controllers [chart-controllers]="chart.controllers"></app-chart-controllers>
         </div>
-        <div class="col-8">
+        <div class="col-md-8 col-lg-8 col-xl-8 col-sm-12 col-lg-pull-4 col-md-pull-4 col-xl-pull-4 h-100">
           <app-chart [chart]="chart"></app-chart>
         </div>
       </div>

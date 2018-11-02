@@ -20,8 +20,10 @@ export class Chart {
     public animation: boolean = true,
     public display_grid: boolean = true
   ) {
+    /*
     if (this.datasets.length < 2 && this.fill_between) {
       this.fill_between = false;
     }
+    */
   }
 }

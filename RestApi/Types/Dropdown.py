@@ -1,5 +1,5 @@
 class Dropdown:
-    def __init__(self, title="", label="", items=[], label2="", items2=[]):
+    def __init__(self, title="", label="", items=[], label2="", items2=None):
         self.title = title
         self.items = items
         self.label = label
