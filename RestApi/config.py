@@ -26,9 +26,9 @@ dist_chart = Chart(
         ),
         header_text="Input Controllers"
     ),
-    yAxis=YAxis(min=0, scale_label="Average Yearly Income",
+    yAxis=YAxis(min=0, scale_label="",
                 label_color="rgb(90, 20, 255)", label_size=12),
-    xAxis=XAxis(scale_label="Average Yearly Income",
+    xAxis=XAxis(scale_label="",
                 label_color="rgb(90, 20, 255)", label_size=15, type="linear"),
     datasets=[
         Dataset(
@@ -76,9 +76,9 @@ range_chart = Chart(
         ),
         header_text="Input Controllers"
     ),
-    yAxis=YAxis(min=0, scale_label="Average Yearly Income",
+    yAxis=YAxis(min=0, scale_label="",
                 label_color="rgb(90, 20, 255)", label_size=12),
-    xAxis=XAxis(scale_label="Average Yearly Income",
+    xAxis=XAxis(scale_label="",
                 label_color="rgb(90, 20, 255)", label_size=15),
     datasets=[
         Dataset(
@@ -134,9 +134,9 @@ average_chart = Chart(
         ),
         header_text="Input Controllers"
     ),
-    yAxis=YAxis(min=0, scale_label="Average Yearly Income",
+    yAxis=YAxis(min=0, scale_label="",
                 label_color="rgb(90, 20, 255)", label_size=12),
-    xAxis=XAxis(scale_label="Average Yearly Income",
+    xAxis=XAxis(scale_label="",
                 label_color="rgb(90, 20, 255)", label_size=15),
     datasets=[
         Dataset(
@@ -192,9 +192,9 @@ share_chart = Chart(
         ),
         header_text="Input Controllers"
     ),
-    yAxis=YAxis(min=0, scale_label="Average Yearly Income",
+    yAxis=YAxis(min=0, scale_label="",
                 label_color="rgb(90, 20, 255)", label_size=12),
-    xAxis=XAxis(scale_label="Average Yearly Income",
+    xAxis=XAxis(scale_label="",
                 label_color="rgb(90, 20, 255)", label_size=15),
     datasets=[
         Dataset(
