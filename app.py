@@ -36,7 +36,7 @@ def js(path):
     elif ".css" in path:
         return send_from_directory('frontend/dist/frontend', path)
     else:
-        return  app.response_class(status=404)
+        return app.response_class(status=404)
 
 
 @app.route("/css/<path:path>")
@@ -61,7 +61,7 @@ def distribution_data(year):
         dist_out["AverageIncome"]), "SmoothedDistribution": list(dist_out["SmoothDistribution"])}
     points = list(zip(dist_list["AverageIncome"],
                       dist_list["SmoothedDistribution"]))
-    #points = data.smooth_distribution_generator(points, 3)
+    points = {"dist": points}
     response = app.response_class(
         response=json.dumps(points),
         status=200,
@@ -76,8 +76,27 @@ def share_data(p_start, p_end, year_from, year_to):
     share_out_dict = share_out.to_dict()['Share']
     share_out_points = [list(i) for i in zip(
         share_out_dict.keys(), share_out_dict.values())]
+    share_out_points = {"share": share_out_points}
     response = app.response_class(
         response=json.dumps(share_out_points),
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+
+
+@app.route("/api/average/<float:p_start>/<float:p_end>/<int:year_from>/<int:year_to>")
+def average_income_data(p_start, p_end, year_from, year_to):
+    avg_income = data.AverageIncome(
+        p_start, p_end, year_from, year_to, data_path)
+    data_ = {"min": [list(i) for i in list(zip(avg_income.to_dict()[('AverageIncome', 'Average_min')].keys(),
+                                               avg_income.to_dict()[('AverageIncome', 'Average_min')].values()))],
+             "max": [list(i) for i in list(zip(
+                 avg_income.to_dict()[('AverageIncome', 'Average_max')].keys(
+                 ), avg_income.to_dict()[('AverageIncome', 'Average_max')].values()
+             ))]}
+    response = app.response_class(
+        response=json.dumps(data_),
         status=200,
         mimetype='application/json'
     )
@@ -96,8 +115,8 @@ def range_data(p_start, p_end, year_from, year_to):
     threshold_min_xy_points = [list(i) for i in zip(indecies, threshold_min)]
     threshold_max_xy_points = [list(i) for i in zip(indecies, threshold_max)]
     datasets = {
-        "threshold_min_xy_points": threshold_min_xy_points,
-        "threshold_max_xy_points": threshold_max_xy_points
+        "min": threshold_min_xy_points,
+        "max": threshold_max_xy_points
     }
     response = app.response_class(
         response=json.dumps(datasets),
@@ -109,9 +128,9 @@ def range_data(p_start, p_end, year_from, year_to):
 
 @app.route("/api/chart_config")
 def chart_config_json():
-    data = chart_config.to_dict()
+    data = chart_config
     response = app.response_class(
-        response=json.dumps(data),
+        response=json.dumps(data.to_dict()),
         status=200,
         mimetype='application/json'
     )

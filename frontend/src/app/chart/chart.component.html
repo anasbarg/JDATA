@@ -1,3 +1,4 @@
-<div *ngIf="rChart">
-  <canvas height="500" width="700" #mychart>{{rChart}}</canvas>
+<div style="width: 100%;">
+  <canvas baseChart height="260" width="400" [datasets]="Data" [labels]="Labels" [options]="Options" [colors]="DatasetsColors"
+    [legend]="Legend" [chartType]="ChartType"></canvas>
 </div>

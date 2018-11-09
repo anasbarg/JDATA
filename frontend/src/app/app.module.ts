@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-
+import { ChartsModule } from 'ng2-charts';
 // Components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -19,25 +19,26 @@ import { DropdownControllerComponent } from './dropdown-controller/dropdown-cont
 import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    ContentComponent,
-    ChartCardComponent,
-    ChartControllersComponent,
-    SliderComponent,
-    DropdownControllerComponent,
-    ChartComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    FormsModule,
-    HttpClientModule,
-    CommonModule,
-  ],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        ContentComponent,
+        ChartCardComponent,
+        ChartControllersComponent,
+        SliderComponent,
+        DropdownControllerComponent,
+        ChartComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        FormsModule,
+        HttpClientModule,
+        CommonModule,
+        ChartsModule,
+    ],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -6,4 +6,4 @@ class Slider:
         self.type = "slider"
 
     def to_dict(self):
-        return self.__dict__
+        return dict(self.__dict__)

@@ -1,21 +1,21 @@
 import { IController } from './IController';
 
 export class Slider implements IController {
-  constructor(
-    public type: string,
-    public title: string = '',
-    public pips: Array<any> | null = null
-  ) {}
+    constructor(
+        public id: string,
+        public title: string = '',
+        public pips: Array<any> | null = null
+    ) {}
 
-  isSlider() {
-    return true;
-  }
+    isSlider() {
+        return true;
+    }
 
-  isDropdown() {
-    return false;
-  }
+    isDropdown() {
+        return false;
+    }
 
-  isCheckbox() {
-    return false;
-  }
+    isCheckbox() {
+        return false;
+    }
 }
