@@ -6,6 +6,8 @@ class ControllersList:
         # handeling optional attributes
         if "header_text" in kwargs:
             self.header_text = kwargs["header_text"]
+        else:
+            self.header_text = "Input"
         # required Atrribute
         try:
             self.controllers_list = list(args)
