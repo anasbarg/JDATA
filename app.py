@@ -129,7 +129,7 @@ def range_data(p_start, p_end, year_from, year_to):
 @app.route("/api/range/<float:Msalary>/<int:year_from>/<int:year_to>")
 def rank_data(Msalary, year_from, year_to):
     df_rank = data.Rank_salary(
-        12*Msalary, year_from, year_to, data_path)
+        Msalary, year_from, year_to, data_path)
     indecies = [index for index, row in df_range.iterrows()]
     percentile_max = [row["start"]["percentile_max"]
                      for index, row in df_range.iterrows()]
