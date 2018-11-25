@@ -44,13 +44,13 @@ dist_chart = Chart(
 
 range_chart = Chart(
     data_provider="range",
-    title="Boundaries Of Average Income",
-    subtitle="Please Specify The Intervals",
+    title="Thrshold of Income",
+    subtitle="",
     type="line",
     fill_between=True,
     point_radius=2.0,
     display_points=True,
-    display_legend=True,
+    display_legend=False,
     animation=True,
     display_grid=True,
     labels=[1992, 2002, 2006, 2008, 2010, 2013],
@@ -62,9 +62,9 @@ range_chart = Chart(
             type="percentile",
             title="Percentile Interval",
             label="Start",
-            items=[i for i in range(0, 101)],
+            items=[i for i in range(0, 99)]+[99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.991,99.992,99.993,99.994,99.995,99.996,99.997,99.998,99.999,100]
             label2="End",
-            items2=[i for i in range(0, 101)]
+            items2=[i for i in range(0, 99)]+[99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.991,99.992,99.993,99.994,99.995,99.996,99.997,99.998,99.999,100]
         ),
         Dropdown(
             type="year",
@@ -74,7 +74,7 @@ range_chart = Chart(
             label2="End",
             items2=[1992, 2002, 2006, 2008, 2010, 2013]
         ),
-        header_text="Input Controllers"
+        header_text="Input"
     ),
     yAxis=YAxis(min=0, scale_label="",
                 label_color="rgb(90, 20, 255)", label_size=12),
