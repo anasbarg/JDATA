@@ -26,7 +26,7 @@ dist_chart = Chart(
         ),
         header_text="Input"
     ),
-    yAxis=YAxis(scale_label="Log Probability: -2 means 1%, -4 means 0.01%",
+    yAxis=YAxis(scale_label="Probability", min = 0,
                 label_color="rgb(90, 20, 255)", label_size=15),
     xAxis=XAxis(scale_label="Monthly income (logarithmic scale: 3 means 1000 JD, 4 means 10000 JD)",
                 label_color="rgb(90, 20, 255)", label_size=15, type="linear"),
