@@ -51,13 +51,13 @@ def AverageIncome(p_start, p_end, Year_from, Year_to, path):
     return df_Average1.agg(aggregation)
 
 
-#This finction asks user to enter his monthly salary and it provides his rank
-def percentile(Salary, Year_from,Year_to,path):
+# This finction asks user to enter his monthly salary and it provides his rank
+def percentile(Salary, Year_from, Year_to, path):
     df = pd.read_csv(path)
-    YearlyIncome = 12*Salary
-    df_percentile = df[(df.year>=Year_from)&(df.year<=Year_to)&(
-        df['Threshold(JOD)']<=YearlyIncome)].copy()#filter required population and time period    
+    YearlyIncome = 12*(Salary-0.000001)
+    df_percentile = df[(df.year >= Year_from) & (df.year <= Year_to) & (
+        df['Threshold(JOD)'] <= YearlyIncome)].copy()  # filter required population and time period
     df_percentile1 = df_percentile.groupby('year')
-    aggregation = {'start':'max'}
-    
+    aggregation = {'start': 'max'}
+
     return df_percentile1.agg(aggregation)
