@@ -32,7 +32,7 @@ def share(p_start, p_end, Year_from, Year_to, path):
 
 def Threshold_range(p_start, p_end, Year_from, Year_to, path):
     df = pd.read_csv(path)  # a dataframe that forms the main source of data
-    df_threshold1 = df[(df.year >= Year_from) & (df.year <= Year_to) & (df.start >= p_start) & (
+    df_threshold1 = df[(df.year >= Year_from) & (df.year <= Year_to) & (df.start >= p_start-0.0001) & (
         df.start <= p_end)].copy()  # filter required population and time period
     df_threshold1 = df_threshold1.groupby('year')  # calculate share
     aggregation = {
@@ -48,3 +48,14 @@ def AverageIncome(p_start, p_end, Year_from, Year_to, path):
     aggregation = {'AverageIncome': {
         'Average_min': 'min', 'Average_max': 'max'}}
     return df_Average1.agg(aggregation)
+
+#This finction asks user to enter his monthly salary and it provides his rank
+def percentile(Salary, Year_from,Year_to,path):
+    df = pd.read_csv(path)
+    YearlyIncome = 12*Salary
+    df_percentile = df[(df.year>=Year_from)&(df.year<=Year_to)&(
+        df['Threshold(JOD)']<=YearlyIncome)].copy()#filter required population and time period    
+    df_percentile1 = df_percentile.groupby('year')
+    aggregation = {'start':'max'}
+    
+    return df_percentile1.agg(aggregation)
