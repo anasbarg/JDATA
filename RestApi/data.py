@@ -49,6 +49,7 @@ def AverageIncome(p_start, p_end, Year_from, Year_to, path):
         'Average_min': 'min', 'Average_max': 'max'}}
     return df_Average1.agg(aggregation)
 
+
 #This finction asks user to enter his monthly salary and it provides his rank
 def percentile(Salary, Year_from,Year_to,path):
     df = pd.read_csv(path)
