@@ -215,3 +215,4 @@ chart_config = ChartConfig(
     share_chart,
     average_chart
 )
+
