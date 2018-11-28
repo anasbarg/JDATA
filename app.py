@@ -125,37 +125,22 @@ def range_data(p_start, p_end, year_from, year_to):
     )
     return response
 
-"""
-@app.route("/api/range/<float:Msalary>/<int:year_from>/<int:year_to>")
-def rank_data(Msalary, year_from, year_to):
-    df_rank = data.Rank_salary(
-        Msalary, year_from, year_to, data_path)
-    indecies = [index for index, row in df_range.iterrows()]
-    percentile_max = [row["start"]["percentile_max"]
-                     for index, row in df_range.iterrows()]
-    perscetile_max_xy_points = [list(i) for i in zip(indecies, percentile_max)]
-    datasets = {
-        "max": perscetile_max_xy_points
-    }
+
+@app.route("/api/rank/<float:salary>/<int:year_from>/<int:year_to>")
+def rank_data(salary, year_from, year_to):
+    indecies = [index for index, row in data.percentile(
+        salary, year_from, year_to, data_path).iterrows()]
+    ranks = [row["start"]
+             for index, row in data.percentile(
+        salary, year_from, year_to, data_path).iterrows()]
+    points = [list(i) for i in zip(indecies, ranks)]
+    datasets = {"rank": points}
     response = app.response_class(
         response=json.dumps(datasets),
         status=200,
         mimetype='application/json'
     )
     return response
-"""
-
-"""
-def percentile(Salary, Year_from,Year_to,path):
-    df = pd.read_csv(path)
-    YearlyIncome = 12*Salary
-    df_percentile = df[(df.year>=Year_from)&(df.year<=Year_to)&(df['Threshold(JOD)']<=YearlyIncome)].copy()   
-    df_percentile1 = df_percentile.groupby('year')
-    aggregation = {'start':'max'}
-    
-    return df_percentile1.agg(aggregation)
-"""
-
 
 
 @app.route("/api/chart_config")

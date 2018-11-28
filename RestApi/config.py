@@ -209,8 +209,8 @@ share_chart = Chart(
     ]
 )
 
-"""
-share_chart = Chart(
+
+rank_chart = Chart(
     data_provider="rank",
     title="Rank",
     subtitle="find the percentile rank according to the monthly salay",
@@ -259,11 +259,11 @@ share_chart = Chart(
 )
 
 
-"""
 chart_config = ChartConfig(
     range_chart,
     dist_chart,
     share_chart,
-    average_chart
+    average_chart,
+    rank_chart
 )
 

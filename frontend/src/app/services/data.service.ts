@@ -15,6 +15,8 @@ export class DataService {
     private currentDistributionData = this.distributionData.asObservable();
     private averageIncomeData: Subject<any> = new BehaviorSubject({});
     private currentAverageIncomeData = this.averageIncomeData.asObservable();
+    private rankData: Subject<any> = new BehaviorSubject({});
+    private currentRankData = this.rankData.asObservable();
     constructor(
         private _http: HttpClient,
         private _chartConfig: ChartConfigService
@@ -62,6 +64,14 @@ export class DataService {
             });
     }
 
+    private setRankData(salary, year_from, year_to) {
+        this._http
+            .get(`/api/rank/${salary + 0.000001}/${year_from}/${year_to}`)
+            .subscribe(data => {
+                this.rankData.next(data);
+            });
+    }
+
     private setDistributionData(year) {
         this._http.get(`/api/distribution/${year}`).subscribe(data => {
             this.distributionData.next(data);
@@ -76,6 +86,8 @@ export class DataService {
             return this.currentRangeData;
         } else if (data_provider === 'average') {
             return this.currentAverageIncomeData;
+        } else if (data_provider === 'rank') {
+            return this.currentRankData;
         }
     }
     public setData(
@@ -105,6 +117,13 @@ export class DataService {
             this.setAverageIncomeData(
                 kwargs.percentile[0],
                 kwargs.percentile[1],
+                kwargs.year[0],
+                kwargs.year[1]
+            );
+        } else if (data_provider === 'rank') {
+            console.log(data_provider, kwargs);
+            this.setRankData(
+                kwargs.percentile[0],
                 kwargs.year[0],
                 kwargs.year[1]
             );

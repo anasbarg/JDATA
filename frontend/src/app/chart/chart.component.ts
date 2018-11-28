@@ -50,8 +50,8 @@ export class ChartComponent implements OnInit {
                     fill: this.chart.fill_between
                         ? 1
                         : dataset.fill
-                            ? true
-                            : false,
+                        ? true
+                        : false,
                     tension: dataset.tension / 2,
                     lineTension: dataset.tension / 2,
                 };
