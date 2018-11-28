@@ -230,8 +230,8 @@ share_chart = Chart(
             type="percentile",
             title="monthly salary",
             label="Start",
-            items=[i for i in range(0, 99)]+[99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999,100]
-        ),
+            items=list(linspace(0, 900, 50))+list(linspace(900, 5000, 100))+list(linspace(5000, 20000, 500))+list(linspace(20000, 50000, 1000))+list(linspace(50000, 100000, 5000))+list(linspace(100000, 1000000, 100000))
+            ),
         Dropdown(
             type="year",
             title="Year",
