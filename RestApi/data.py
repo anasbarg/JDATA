@@ -18,8 +18,8 @@ def distribution(year, a, path):
     # the x-axis is log scale of the average monthly income in the year of interest
     x = np.log10(df_year.AverageIncome/12)
     y = df_year.pdf  # the exact distribution function in that year
-    z = smoothexp(y, a)  # is the smoothed distribution function at that year
-    z = np.log10(y)+10
+    #z = smoothexp(y, a)  # is the smoothed distribution function at that year
+    z = np.log10(y)
     return (round(x, 2), y, z)
 
 
