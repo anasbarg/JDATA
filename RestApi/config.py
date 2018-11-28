@@ -208,7 +208,57 @@ share_chart = Chart(
     ]
 )
 
+"""
+share_chart = Chart(
+    data_provider="rank",
+    title="Rank",
+    subtitle="find the percentile rank according to the monthly salay",
+    type="line",
+    fill_between=False,
+    point_radius=2.0,
+    display_points=True,
+    display_legend=False,
+    animation=True,
+    display_grid=True,
+    labels=[1992, 2002, 2006, 2008, 2010, 2013],
+    # Each Controller Should Have A Distinct Title.
+    # If Two Controllers Have To Have The Same Title
+    # Then Just Add An Extra Space To One Of Them.
+    controllers=ControllersList(
+        Dropdown(
+            type="percentile",
+            title="monthly salary",
+            label="Start",
+            items=[i for i in range(0, 99)]+[99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999],100]
+        ),
+        Dropdown(
+            type="year",
+            title="Year",
+            label="from",
+            items=[1992, 2002, 2006, 2008, 2010, 2013],
+            label2="to",
+            items2=[1992, 2002, 2006, 2008, 2010, 2013]
+        ),
+        header_text="Input"
+    ),
+    yAxis=YAxis(min=0, scale_label="Percentile rank %", max = 100,
+                label_color="rgb(90, 20, 255)", label_size=15),
+    xAxis=XAxis(scale_label="",
+                label_color="rgb(90, 20, 255)", label_size=15),
+    datasets=[
+        Dataset(
+            dataset_id="rank",
+            label="Minimmum",
+            color="rgb(90, 30, 255)",
+            border_width=1.0,
+            fill=True,
+            tension=1.0
+        )
+    ]
+)
 
+
+"""
 chart_config = ChartConfig(
     range_chart,
     dist_chart,
