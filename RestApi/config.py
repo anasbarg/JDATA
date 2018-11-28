@@ -44,7 +44,7 @@ dist_chart = Chart(
 
 range_chart = Chart(
     data_provider="range",
-    title="Thrshold",
+    title="Threshold",
     subtitle="",
     type="line",
     fill_between=True,
@@ -60,7 +60,7 @@ range_chart = Chart(
     controllers=ControllersList(
         Dropdown(
             type="percentile",
-            title="Percentile rank of population %",
+            title="Percentile rank of population [%]",
             label="Start",
             items=[i for i in range(1, 99)]+[99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.991,99.992,99.993,99.994,99.995,99.996,99.997,99.998,99.999],
             label2="End",
@@ -118,7 +118,7 @@ average_chart = Chart(
     controllers=ControllersList(
         Dropdown(
             type="percentile",
-            title="Percentile rank of population %",
+            title="Percentile rank of population [%]",
             label="Start",
             items=[i for i in range(0, 99)]+[99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.991,99.992,99.993,99.994,99.995,99.996,99.997,99.998,99.999],
             label2="End",
@@ -135,7 +135,7 @@ average_chart = Chart(
         header_text="Input"
     ),
     yAxis=YAxis(min=0, scale_label="Yearly income [JD]",
-                label_color="rgb(90, 20, 255)", label_size=12),
+                label_color="rgb(90, 20, 255)", label_size=15),
     xAxis=XAxis(scale_label="",
                 label_color="rgb(90, 20, 255)", label_size=15),
     datasets=[
@@ -176,11 +176,11 @@ share_chart = Chart(
     controllers=ControllersList(
         Dropdown(
             type="percentile",
-            title="Percentile rank of population %",
+            title="Percentile rank of population [%]",
             label="Start",
             items=[i for i in range(0, 99)]+[99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.991,99.992,99.993,99.994,99.995,99.996,99.997,99.998,99.999],
             label2="End",
-            items2=[i for i in range(0, 99)]+[99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.991,99.992,99.993,99.994,99.995,99.996,99.997,99.998,99.999]
+            items2=[i for i in range(0, 99)]+[99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.991,99.992,99.993,99.994,99.995,99.996,99.997,99.998,99.999,100]
         ),
         Dropdown(
             type="year",
@@ -193,7 +193,7 @@ share_chart = Chart(
         header_text="Input"
     ),
     yAxis=YAxis(min=0, scale_label="Share %", max = 100,
-                label_color="rgb(90, 20, 255)", label_size=12),
+                label_color="rgb(90, 20, 255)", label_size=15),
     xAxis=XAxis(scale_label="",
                 label_color="rgb(90, 20, 255)", label_size=15),
     datasets=[
