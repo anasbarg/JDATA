@@ -2,6 +2,7 @@ from json import dumps
 from RestApi.Types.ChartConfig import *
 
 
+
 dist_chart = Chart(
     data_provider="dist",
     title="Income Distribution",
