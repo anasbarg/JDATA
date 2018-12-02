@@ -61,7 +61,7 @@ range_chart = Chart(
     controllers=ControllersList(
         Dropdown(
             type="percentile",
-            title="Percentile rank of population [%]",
+            title="Percentile [%]",
             label="Start",
             items=[i for i in range(1, 99)]+[
                 99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999],
@@ -105,7 +105,7 @@ range_chart = Chart(
 
 average_chart = Chart(
     data_provider="average",
-    title="Average Income",
+    title="Gap in average income",
     subtitle="",
     type="line",
     fill_between=True,
@@ -121,7 +121,7 @@ average_chart = Chart(
     controllers=ControllersList(
         Dropdown(
             type="percentile",
-            title="Percentile rank of population [%]",
+            title="Percentile [%]",
             label="Start",
             items=[i for i in range(0, 99)]+[
                 99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999],
@@ -181,7 +181,7 @@ share_chart = Chart(
     controllers=ControllersList(
         Dropdown(
             type="percentile",
-            title="Percentile rank of population [%]",
+            title="Percentile group [%]",
             label="Start",
             items=[i for i in range(0, 99)]+[
                 99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999],
@@ -219,7 +219,7 @@ share_chart = Chart(
 rank_chart = Chart(
     data_provider="rank",
     title="Rank",
-    subtitle="find the percentile rank according to the monthly salay",
+    subtitle="find the percentile according to a monthly income/salary",
     type="line",
     fill_between=False,
     point_radius=2.0,
