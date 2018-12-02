@@ -5,7 +5,7 @@ from RestApi.Types.ChartConfig import *
 
 dist_chart = Chart(
     data_provider="dist",
-    title="Income Distribution",
+    title="Income distribution",
     subtitle="",
     type="line",
     fill_between=False,
