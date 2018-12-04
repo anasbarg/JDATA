@@ -43,7 +43,7 @@ def Threshold_range(p_start, p_end, Year_from, Year_to, path):
 
 def AverageIncome(p_start, p_end, Year_from, Year_to, path):
     df = pd.read_csv(path)  # a dataframe that forms the main source of data
-    df_Average1 = df[(df.year >= Year_from) & (df.year <= Year_to) & (df.start >= p_start) & (
+    df_Average1 = df[(df.year >= Year_from) & (df.year <= Year_to) & (df.start >= p_start-0.000001) & (
         df.start <= p_end)].copy()  # filter required population and time period
     df_Average1 = df_Average1.groupby('year')  # calculate share
     aggregation = {'AverageIncome': {
