@@ -1,4 +1,5 @@
 from json import dumps
+import numpy as np
 from RestApi.Types.ChartConfig import *
 
 
@@ -236,10 +237,10 @@ rank_chart = Chart(
             type="percentile",
             title="monthly salary",
             label="Start",
-            items=list(np.arange(0, 200, 5))+list(np.arange(200, 900, 20))+list(np.arange(900, 1400, 50))+list(
+            items=[int(i) for i in (list(np.arange(0, 200, 5))+list(np.arange(200, 900, 20))+list(np.arange(900, 1400, 50))+list(
                 np.arange(1400, 3000, 100))+ list(np.arange(3000, 20000, 500))+list(np.arange(20000, 50000, 1000))+list(
-                np.arange(50000, 100000, 5000))+list(np.arange(100000, 1000000, 10000))+list(np.arange(1000000, 500000,10000000))
-            ),
+                np.arange(50000, 100000, 5000))+list(np.arange(100000, 1000000, 10000))+list(np.arange(1000000, 500000,10000000)))]
+        ),
         Dropdown(
             type="year",
             title="Year",

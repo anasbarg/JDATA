@@ -145,9 +145,9 @@ def rank_data(salary, year_from, year_to):
 
 @app.route("/api/chart_config")
 def chart_config_json():
-    data = chart_config
+    data = chart_config.to_dict()
     response = app.response_class(
-        response=json.dumps(data.to_dict()),
+        response=json.dumps(data),
         status=200,
         mimetype='application/json'
     )
