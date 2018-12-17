@@ -7,7 +7,7 @@ from RestApi.Types.ChartConfig import *
 dist_chart = Chart(
     data_provider="dist",
     title="Income distribution",
-    description="Income distribution  \n the probability distribution function of the monthly income at a chosen year \n\n This graph answers questions like: \n what is the probability that the salary of a randomly chosen adult equals 1000 JD?",
+    description="Income distribution\n is the probability density function of the monthly income at a chosen year. \n\n This graph answers questions like: \n what is the probability that the salary of a randomly chosen adult equals 1000 JD?",
     description_title="",
     subtitle="",
     type="line",
@@ -49,7 +49,7 @@ dist_chart = Chart(
 range_chart = Chart(
     data_provider="range",
     title="Threshold",
-    description="Threshold  \n is the minimum Pre-tax yearly income at a chosen percentile \n\n This graph answers questions like: \n what is the min income for those at the top 1%? It also allows comparing 2 percentiles",
+    description="Threshold  \n is the minimum pre-tax yearly income for a chosen percentile \n\n This graph answers questions like: \n what is the min income for those at the top 1%? It also allows comparing 2 percentiles",
     description_title="",
     subtitle="",
     type="line",
@@ -67,10 +67,10 @@ range_chart = Chart(
         Dropdown(
             type="percentile",
             title="Percentile [%]",
-            label="Start",
+            label="first persentile",
             items=[i for i in range(1, 99)]+[
                 99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999],
-            label2="End",
+            label2="second persentile",
             items2=[i for i in range(1, 99)]+[
                 99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999]
         ),
@@ -111,7 +111,7 @@ range_chart = Chart(
 average_chart = Chart(
     data_provider="average",
     title="Gap in average income",
-    description="Average income compares between the average Pre-tax yearly income of 2 chosen percentiles \n\n This graph answers questions like: \n what is the gap in average income between those ranked at the 90 percentile and those at 50 percentile",
+    description="Average income compares between the average pre-tax yearly income of 2 chosen percentiles. \n\n This graph answers questions like: \n what is the gap in average income between those ranked at the 90 percentile and those at 50 percentile",
     description_title="",
     subtitle="",
     type="line",
@@ -129,12 +129,12 @@ average_chart = Chart(
         Dropdown(
             type="percentile",
             title="Percentile [%]",
-            label="Start",
+            label="first persentile",
             items=[i for i in range(0, 99)]+[
                 99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999],
-            label2="End",
+            label2="second persentile",
             items2=[i for i in range(0, 99)]+[
-                99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999,100]
+                99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999]
         ),
         Dropdown(
             type="year",
@@ -174,7 +174,7 @@ share_chart = Chart(
     data_provider="share",
     title="Share",
     subtitle="",
-    description="Share is the percentage of Pre-tax national income acquired by a given percentile group.) \n\n This graph answers questions like: \n what percentage of the national income does the top 1% hold?",
+    description="Share is the percentage of Pre-tax national income acquired by a given percentile group. \n\n This graph answers questions like: \n what percentage of the national income does the top 1% hold?",
     description_title="",
     type="line",
     fill_between=False,
@@ -245,8 +245,8 @@ rank_chart = Chart(
     controllers=ControllersList(
         Dropdown(
             type="percentile",
-            title="monthly salary",
-            label="Start",
+            title="Monthly income/salary",
+            label="",
             items=[int(i) for i in (list(np.arange(0, 200, 5))+list(np.arange(200, 900, 20))+list(np.arange(900, 1400, 50))+list(
                 np.arange(1400, 3000, 100))+ list(np.arange(3000, 20000, 500))+list(np.arange(20000, 50000, 1000))+list(
                 np.arange(50000, 100000, 5000))+list(np.arange(100000, 1000000, 10000))+list(np.arange(1000000, 500000,10000000)))]
