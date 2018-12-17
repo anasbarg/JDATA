@@ -7,6 +7,8 @@ from RestApi.Types.ChartConfig import *
 dist_chart = Chart(
     data_provider="dist",
     title="Income distribution",
+    description="dist is the percentile for a chosen monthly income (salary) \n\n This graph answers questions like: \n how did the percentile of an adult who has a salary of 1000 JD change over years?",
+    description_title="",
     subtitle="",
     type="line",
     fill_between=False,
@@ -47,6 +49,8 @@ dist_chart = Chart(
 range_chart = Chart(
     data_provider="range",
     title="Threshold",
+    description="Rank is the percentile for a chosen monthly income (salary) \n\n This graph answers questions like: \n how did the percentile of an adult who has a salary of 1000 JD change over years?",
+    description_title="",
     subtitle="",
     type="line",
     fill_between=True,
@@ -107,6 +111,8 @@ range_chart = Chart(
 average_chart = Chart(
     data_provider="average",
     title="Gap in average income",
+    description="Rank is the percentile for a chosen monthly income (salary) \n\n This graph answers questions like: \n how did the percentile of an adult who has a salary of 1000 JD change over years?",
+    description_title="",
     subtitle="",
     type="line",
     fill_between=True,
@@ -123,6 +129,8 @@ average_chart = Chart(
         Dropdown(
             type="percentile",
             title="Percentile [%]",
+            description="Rank is the percentile for a chosen monthly income (salary) \n\n This graph answers questions like: \n how did the percentile of an adult who has a salary of 1000 JD change over years?",
+            description_title="",
             label="Start",
             items=[i for i in range(0, 99)]+[
                 99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999],
@@ -168,6 +176,8 @@ share_chart = Chart(
     data_provider="share",
     title="Share",
     subtitle="",
+    description="share is the percentile for a chosen monthly income (salary) \n\n This graph answers questions like: \n how did the percentile of an adult who has a salary of 1000 JD change over years?",
+    description_title="",
     type="line",
     fill_between=False,
     point_radius=2.0,
@@ -243,14 +253,14 @@ rank_chart = Chart(
                 np.arange(1400, 3000, 100))+ list(np.arange(3000, 20000, 500))+list(np.arange(20000, 50000, 1000))+list(
                 np.arange(50000, 100000, 5000))+list(np.arange(100000, 1000000, 10000))+list(np.arange(1000000, 500000,10000000)))]
         ),
-"""        Dropdown(
+        Dropdown(
             type="year",
             title="Year",
             label="from",
             items=[1992, 2002, 2006, 2008, 2010, 2013],
             label2="to",
             items2=[1992, 2002, 2006, 2008, 2010, 2013]
-        ),"""
+        ),
         header_text="Input"
     ),
     yAxis=YAxis(min=0, scale_label="Percentile rank %", max = 100,
