@@ -7,7 +7,7 @@ from RestApi.Types.ChartConfig import *
 dist_chart = Chart(
     data_provider="dist",
     title="Income distribution",
-    description="dist is the percentile for a chosen monthly income (salary) \n\n This graph answers questions like: \n how did the percentile of an adult who has a salary of 1000 JD change over years?",
+    description="Income distribution  \n the probability distribution function of the monthly income at a chosen year \n\n This graph answers questions like: \n what is the probability that the salary of a randomly chosen adult equals 1000 JD?",
     description_title="",
     subtitle="",
     type="line",
@@ -49,7 +49,7 @@ dist_chart = Chart(
 range_chart = Chart(
     data_provider="range",
     title="Threshold",
-    description="Rank is the percentile for a chosen monthly income (salary) \n\n This graph answers questions like: \n how did the percentile of an adult who has a salary of 1000 JD change over years?",
+    description="Threshold  \n is The minimum Pre-tax yearly income at a chosen percentile \n\n This graph answers questions like: \n what is the min income for those at the top 1%? It also allows comparing 2 percentiles",
     description_title="",
     subtitle="",
     type="line",
@@ -111,7 +111,7 @@ range_chart = Chart(
 average_chart = Chart(
     data_provider="average",
     title="Gap in average income",
-    description="Rank is the percentile for a chosen monthly income (salary) \n\n This graph answers questions like: \n how did the percentile of an adult who has a salary of 1000 JD change over years?",
+    description="Average income compares between the average Pre-tax yearly income of 2 chosen percentiles \n\n This graph answers questions like: \n what is the gap in average income between those ranked at the 90 percentile and those at 50 percentile",
     description_title="",
     subtitle="",
     type="line",
@@ -136,14 +136,14 @@ average_chart = Chart(
             items2=[i for i in range(0, 99)]+[
                 99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999,100]
         ),
-"""        Dropdown(
+        Dropdown(
             type="year",
             title="Year",
             label="from",
             items=[1992, 2002, 2006, 2008, 2010, 2013],
             label2="to",
             items2=[1992, 2002, 2006, 2008, 2010, 2013]
-        ),"""
+        ),
         header_text="Input"
     ),
     yAxis=YAxis(min=0, scale_label="Yearly income [JD]",
@@ -251,14 +251,14 @@ rank_chart = Chart(
                 np.arange(1400, 3000, 100))+ list(np.arange(3000, 20000, 500))+list(np.arange(20000, 50000, 1000))+list(
                 np.arange(50000, 100000, 5000))+list(np.arange(100000, 1000000, 10000))+list(np.arange(1000000, 500000,10000000)))]
         ),
-"""        Dropdown(
+        Dropdown(
             type="year",
             title="Year",
             label="from",
             items=[1992, 2002, 2006, 2008, 2010, 2013],
             label2="to",
             items2=[1992, 2002, 2006, 2008, 2010, 2013]
-        ),""""
+        ),
         header_text="Input"
     ),
     yAxis=YAxis(min=0, scale_label="Percentile rank %", max = 100,
