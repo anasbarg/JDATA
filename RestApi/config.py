@@ -227,7 +227,7 @@ share_chart = Chart(
 
 rank_chart = Chart(
     data_provider="rank",
-    description="Rank is the percentile for a chosen monthly income (salary) \n\n This graph answers questions like: \n how did the percentile of an adult who has a salary of 1000 JD change over years?",
+    description="Rank is the percentile of a chosen monthly income (salary) when ranked among the monthly income of adult population \n\n This graph answers questions like: \n what is the percentile rank of an adult with 1000 JD salary?",
     description_title="",
     title="Rank",
     subtitle="find the percentile according to a monthly income/salary",
