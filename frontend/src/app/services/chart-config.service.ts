@@ -75,7 +75,9 @@ export class ChartConfigService {
                 chart.display_points,
                 chart.display_legend,
                 chart.animation,
-                chart.display_grid
+                chart.display_grid,
+                chart.description,
+                chart.description_title
             );
             return new_chart;
         });

@@ -219,6 +219,8 @@ share_chart = Chart(
 
 rank_chart = Chart(
     data_provider="rank",
+    description="Description here",
+    description_title="Description Title Here",
     title="Rank",
     subtitle="find the percentile according to a monthly income/salary",
     type="line",

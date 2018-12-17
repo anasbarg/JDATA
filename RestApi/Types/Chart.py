@@ -6,8 +6,9 @@ from RestApi.Types.Dataset import *
 from RestApi.Types.Dropdown import *
 from RestApi.Types.ControllersList import *
 
+
 class Chart:
-    def __init__(self, title, data_provider, controllers, yAxis, xAxis, labels, datasets, subtitle="", type="line", fill_between=False, point_radius=2, display_points=True, display_legend=False, animation=True, display_grid=True):
+    def __init__(self, title, data_provider, controllers, yAxis, xAxis, labels, datasets, subtitle="", type="line", fill_between=False, point_radius=2, display_points=True, display_legend=False, animation=True, display_grid=True, description="", description_title=""):
         self.title = title
         self.data_provider = data_provider
         self.controllers = controllers
@@ -23,7 +24,9 @@ class Chart:
         self.display_points = display_points
         self.display_legend = display_legend
         self.animation = animation
-    
+        self.description = description
+        self.description_title = description_title
+
     def to_dict(self):
         dict_ = {}
         dict_["title"] = self.title
@@ -41,4 +44,6 @@ class Chart:
         dict_["xAxis"] = self.xAxis.to_dict()
         dict_["labels"] = self.labels
         dict_["datasets"] = [dataset.to_dict() for dataset in self.datasets]
+        dict_["description"] = self.description
+        dict_["description_title"] = self.description_title
         return dict_

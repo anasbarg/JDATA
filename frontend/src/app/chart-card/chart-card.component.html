@@ -10,6 +10,10 @@
         </div>
         <div class="col-md-8 col-lg-8 col-xl-8 col-sm-12 col-lg-pull-4 col-md-pull-4 col-xl-pull-4 h-100">
           <app-chart [chart]="chart"></app-chart>
+          <div class="col-12" *ngIf="chart.description" style="margin: 40px; overflow: hidden; width: 90%;">
+            <h2>{{ chart.description_title }}</h2>
+            <p>{{ chart.description }}</p>
+          </div>
         </div>
       </div>
     </mat-card-content>
