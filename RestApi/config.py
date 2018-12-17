@@ -129,8 +129,6 @@ average_chart = Chart(
         Dropdown(
             type="percentile",
             title="Percentile [%]",
-            description="Rank is the percentile for a chosen monthly income (salary) \n\n This graph answers questions like: \n how did the percentile of an adult who has a salary of 1000 JD change over years?",
-            description_title="",
             label="Start",
             items=[i for i in range(0, 99)]+[
                 99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999],
