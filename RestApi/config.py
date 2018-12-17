@@ -67,10 +67,10 @@ range_chart = Chart(
         Dropdown(
             type="percentile",
             title="Percentile [%]",
-            label="first persentile",
+            label="first percentile",
             items=[i for i in range(1, 99)]+[
                 99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999],
-            label2="second persentile",
+            label2="second percentile",
             items2=[i for i in range(1, 99)]+[
                 99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999]
         ),
@@ -129,10 +129,10 @@ average_chart = Chart(
         Dropdown(
             type="percentile",
             title="Percentile [%]",
-            label="first persentile",
+            label="from",
             items=[i for i in range(0, 99)]+[
                 99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999],
-            label2="second persentile",
+            label2="to",
             items2=[i for i in range(0, 99)]+[
                 99, 99.1, 99.2, 99.3, 99.4, 99.5,99.6,99.7,99.8,99.9,99.91,99.92,99.93,99.94,99.95,99.96,99.97,99.98,99.99,99.995,99.999]
         ),
