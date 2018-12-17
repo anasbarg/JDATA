@@ -243,14 +243,14 @@ rank_chart = Chart(
                 np.arange(1400, 3000, 100))+ list(np.arange(3000, 20000, 500))+list(np.arange(20000, 50000, 1000))+list(
                 np.arange(50000, 100000, 5000))+list(np.arange(100000, 1000000, 10000))+list(np.arange(1000000, 500000,10000000)))]
         ),
-        Dropdown(
+"""        Dropdown(
             type="year",
             title="Year",
             label="from",
             items=[1992, 2002, 2006, 2008, 2010, 2013],
             label2="to",
             items2=[1992, 2002, 2006, 2008, 2010, 2013]
-        ),
+        ),"""
         header_text="Input"
     ),
     yAxis=YAxis(min=0, scale_label="Percentile rank %", max = 100,
